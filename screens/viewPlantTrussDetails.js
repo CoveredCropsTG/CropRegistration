@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {useMutation, useLazyQuery} from '@apollo/client/react';
+import React, { useEffect, useState } from 'react';
+import { useMutation, useLazyQuery } from '@apollo/client/react';
 import {
   StyleSheet,
   Text,
@@ -11,10 +11,13 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import {INSERT_PLANT_DETAILS, INSERT_TRUSS_DETAILS} from '../graphql/mutation';
-import {GET_PLANT_DETAILS, GET_TRUSS_DETAILS} from '../graphql/queries';
+import {
+  INSERT_PLANT_DETAILS,
+  INSERT_TRUSS_DETAILS,
+} from '../graphql/mutation';
+import { GET_PLANT_DETAILS, GET_TRUSS_DETAILS } from '../graphql/queries';
 import Database from './Database';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 var loadingDone = '';
 var loading = true;
@@ -210,7 +213,8 @@ export const ViewPlantTrussDetails = props => {
         visible={loading}
         onRequestClose={() => {
           console.log('Cannot close');
-        }}>
+        }}
+      >
         <View style={styles.modalBackground}>
           <View style={styles.activityIndicatorWrapper}>
             <ActivityIndicator
@@ -222,14 +226,15 @@ export const ViewPlantTrussDetails = props => {
         </View>
       </Modal>
 
-      {Platform.OS === 'ios' ? <View style={{marginTop: 40}}></View> : null}
+      {Platform.OS === 'ios' ? <View style={{ marginTop: 40 }}></View> : null}
 
       <View
         style={{
           flexDirection: 'row',
           justifyContent: 'space-between',
           marginLeft: 20,
-        }}>
+        }}
+      >
         <View style={styles.headerImage1}>
           <TouchableOpacity>
             <Image source={require('../assets/back.png')} />
@@ -240,8 +245,8 @@ export const ViewPlantTrussDetails = props => {
           <Image source={require('../assets/fresh3.png')} />
         </View>
 
-        <View style={{height: 20, width: 20}}>
-          <Text style={{alignSelf: 'center'}}></Text>
+        <View style={{ height: 20, width: 20 }}>
+          <Text style={{ alignSelf: 'center' }}></Text>
         </View>
       </View>
 

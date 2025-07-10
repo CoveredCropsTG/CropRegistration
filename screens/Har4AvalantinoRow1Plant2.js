@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
@@ -12,16 +12,16 @@ import {
   Keyboard,
   KeyboardAvoidingView,
 } from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler';
 import moment from 'moment';
-import AsyncStorage from '@react-native-community/async-storage';
-import {CheckBox} from 'react-native-elements';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { CheckBox } from 'react-native-elements';
 import Database from './Database';
-import {LogBox} from 'react-native';
-import {EventRegister} from 'react-native-event-listeners';
+import { LogBox } from 'react-native';
+import { EventRegister } from 'react-native-event-listeners';
 var screenWidth2 = Dimensions.get('window').width / 1.6;
 
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 let screenWidth = Dimensions.get('window').width;
 let screenHeight = Dimensions.get('window').height;
 const db = new Database();
@@ -34,9 +34,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
 
     this.onFocus = this.onFocus.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.onSubmitleavesPerPlantHar4AvalantinoRow1Plant2 = this.onSubmitleavesPerPlantHar4AvalantinoRow1Plant2.bind(
-      this,
-    );
+    this.onSubmitleavesPerPlantHar4AvalantinoRow1Plant2 =
+      this.onSubmitleavesPerPlantHar4AvalantinoRow1Plant2.bind(this);
     this.onSubmitFullysetTruss = this.onSubmitFullysetTruss.bind(this);
     this.onSubmitTrussLength = this.onSubmitTrussLength.bind(this);
     this.onSubmitWeeklyGrowth = this.onSubmitWeeklyGrowth.bind(this);
@@ -44,9 +43,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
     this.onSubmitLeafLength = this.onSubmitLeafLength.bind(this);
     this.onSubmitLeafWidth = this.onSubmitLeafWidth.bind(this);
     this.onSubmitStmDiameter = this.onSubmitStmDiameter.bind(this);
-    this.onSubmitLastWeekStmDiameter = this.onSubmitLastWeekStmDiameter.bind(
-      this,
-    );
+    this.onSubmitLastWeekStmDiameter =
+      this.onSubmitLastWeekStmDiameter.bind(this);
     this.onAccessoryPress = this.onAccessoryPress.bind(this);
 
     this.leavesPerPlantHar4AvalantinoRow1Plant2Ref = this.updateRef.bind(
@@ -69,7 +67,7 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
     this.state = {
       //Plants
       weekNumber: '',
-      size: {width, height},
+      size: { width, height },
       plantId: '',
       plantRow: '',
       plantName: '',
@@ -183,7 +181,7 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
   }
 
   goBack() {
-    const {navigation} = this.props;
+    const { navigation } = this.props;
     navigation.goBack();
     navigation.state.params.onBack(); // Call onBack function of ScreenA
   }
@@ -198,7 +196,7 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
     var convertWeekNumber = +weekNumberText;
     var completeWeekNumber = convertWeekNumber + weekNumber;
 
-    this.setState({weekNumber: completeWeekNumber});
+    this.setState({ weekNumber: completeWeekNumber });
 
     LogBox.ignoreAllLogs(true);
 
@@ -239,11 +237,10 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
             d.plantRow === '424' &&
             d.plantWeek === filteredPlantWeek;
 
-          const filteredweekRowPlant = allPlant.plant_details.filter(
-            weekRowPlant,
-          );
+          const filteredweekRowPlant =
+            allPlant.plant_details.filter(weekRowPlant);
 
-          this.setState({allPlantData: filteredweekRowPlant});
+          this.setState({ allPlantData: filteredweekRowPlant });
 
           this.setData();
         })
@@ -264,11 +261,10 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
             d.plantRow === '424' &&
             d.plantWeek === filteredTrussWeek;
 
-          const filteredweekRowTruss = allTruss.truss_details.filter(
-            weekRowTruss,
-          );
+          const filteredweekRowTruss =
+            allTruss.truss_details.filter(weekRowTruss);
 
-          this.setState({allTrussData: filteredweekRowTruss});
+          this.setState({ allTrussData: filteredweekRowTruss });
           this.renderLastWeekTrussDetails();
         })
         .done();
@@ -498,9 +494,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
       AsyncStorage.getItem('floweringTrussHeightHar4AvalantinoRow1Plant2')
         .then(text5Value => {
           this.setState({
-            floweringTrussHeightHar4AvalantinoRow1Plant2: JSON.parse(
-              text5Value,
-            ),
+            floweringTrussHeightHar4AvalantinoRow1Plant2:
+              JSON.parse(text5Value),
           });
         })
         .done();
@@ -1117,9 +1112,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
         .then(text51Value => {
           if (text51Value !== null) {
             this.setState({
-              settingTrussNumberHar4AvalantinoRow1Plant2: JSON.parse(
-                text51Value,
-              ),
+              settingTrussNumberHar4AvalantinoRow1Plant2:
+                JSON.parse(text51Value),
             });
           }
         })
@@ -1327,7 +1321,7 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
 
   _onLayoutDidChange = e => {
     const layout = e.nativeEvent.layout;
-    this.setState({size: {width: layout.width, height: layout.height}});
+    this.setState({ size: { width: layout.width, height: layout.height } });
   };
 
   updatePlantsTextInput = (text, field) => {
@@ -1590,7 +1584,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
                         ).toFixed(2);
                         console.log('Setting Truss Number : ' + settingTruss);
                         this.setState({
-                          settingTrussNumberHar4AvalantinoRow1Plant2: settingTruss,
+                          settingTrussNumberHar4AvalantinoRow1Plant2:
+                            settingTruss,
                           settingTruss: trussNum,
                           prunSettingHar4AvalantinoRow1Plant2: pruningSet,
                         });
@@ -1623,7 +1618,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
                       ).toFixed(2);
                       console.log('Setting Truss Number 1 : ' + settingTruss);
                       this.setState({
-                        settingTrussNumberHar4AvalantinoRow1Plant2: settingTruss,
+                        settingTrussNumberHar4AvalantinoRow1Plant2:
+                          settingTruss,
                         settingTruss: trussNum,
                         prunSettingHar4AvalantinoRow1Plant2: pruningSet,
                       });
@@ -1884,8 +1880,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
                         this.state.setFlowersHar4AvalantinoRow1Plant2 === ''
                       ) {
                       } else {
-                        var number01 = this.state
-                          .trussNumberHar4AvalantinoRow1Plant2;
+                        var number01 =
+                          this.state.trussNumberHar4AvalantinoRow1Plant2;
 
                         flowerPruningNumner = Number.parseInt(
                           this.state.pruningNumberHar4AvalantinoRow1Plant2,
@@ -1907,8 +1903,10 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
                           'Flowering Truss Value : ' + floweringTruss,
                         );
                         this.setState({
-                          floweringTrussssHar4AvalantinoRow1Plant2: floweringTruss,
-                          pruneFloweringHar4AvalantinoRow1Plant2: flowerPruningNumner,
+                          floweringTrussssHar4AvalantinoRow1Plant2:
+                            floweringTruss,
+                          pruneFloweringHar4AvalantinoRow1Plant2:
+                            flowerPruningNumner,
                         });
                         this.setItem(
                           'floweringTrussssHar4AvalantinoRow1Plant2',
@@ -1945,8 +1943,10 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
                       ).toFixed(2);
                       console.log('Flowering Truss Value : ' + floweringTruss);
                       this.setState({
-                        floweringTrussssHar4AvalantinoRow1Plant2: floweringTruss,
-                        pruneFloweringHar4AvalantinoRow1Plant2: flowerPruningNumner,
+                        floweringTrussssHar4AvalantinoRow1Plant2:
+                          floweringTruss,
+                        pruneFloweringHar4AvalantinoRow1Plant2:
+                          flowerPruningNumner,
                       });
                       this.setItem(
                         'floweringTrussssHar4AvalantinoRow1Plant2',
@@ -1980,7 +1980,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
                     console.log('Flowering Truss Value : ' + floweringTruss);
                     this.setState({
                       floweringTrussssHar4AvalantinoRow1Plant2: floweringTruss,
-                      pruneFloweringHar4AvalantinoRow1Plant2: flowerPruningNumner,
+                      pruneFloweringHar4AvalantinoRow1Plant2:
+                        flowerPruningNumner,
                     });
                     this.setItem(
                       'floweringTrussssHar4AvalantinoRow1Plant2',
@@ -2241,9 +2242,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberHar4AvalantinoRow1Plant2);
 
-        const filteredweekRowTruss1 = this.state.allTrussData.filter(
-          weekRowTruss1,
-        );
+        const filteredweekRowTruss1 =
+          this.state.allTrussData.filter(weekRowTruss1);
 
         console.log('Truss 1 : ' + JSON.stringify(filteredweekRowTruss1));
 
@@ -2315,9 +2315,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberHar4AvalantinoRow1Plant2) + 1;
 
-        const filteredweekRowTruss2 = this.state.allTrussData.filter(
-          weekRowTruss2,
-        );
+        const filteredweekRowTruss2 =
+          this.state.allTrussData.filter(weekRowTruss2);
 
         console.log('Truss 2 : ' + JSON.stringify(filteredweekRowTruss2));
 
@@ -2390,9 +2389,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberHar4AvalantinoRow1Plant2) + 2;
 
-        const filteredweekRowTruss3 = this.state.allTrussData.filter(
-          weekRowTruss3,
-        );
+        const filteredweekRowTruss3 =
+          this.state.allTrussData.filter(weekRowTruss3);
 
         console.log('Truss 3 : ' + JSON.stringify(filteredweekRowTruss3));
 
@@ -2465,9 +2463,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberHar4AvalantinoRow1Plant2) + 3;
 
-        const filteredweekRowTruss4 = this.state.allTrussData.filter(
-          weekRowTruss4,
-        );
+        const filteredweekRowTruss4 =
+          this.state.allTrussData.filter(weekRowTruss4);
 
         console.log('Truss 4 : ' + JSON.stringify(filteredweekRowTruss4));
 
@@ -2540,9 +2537,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberHar4AvalantinoRow1Plant2) + 4;
 
-        const filteredweekRowTruss5 = this.state.allTrussData.filter(
-          weekRowTruss5,
-        );
+        const filteredweekRowTruss5 =
+          this.state.allTrussData.filter(weekRowTruss5);
 
         console.log('Truss 5 : ' + JSON.stringify(filteredweekRowTruss5));
 
@@ -2615,9 +2611,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberHar4AvalantinoRow1Plant2) + 5;
 
-        const filteredweekRowTruss6 = this.state.allTrussData.filter(
-          weekRowTruss6,
-        );
+        const filteredweekRowTruss6 =
+          this.state.allTrussData.filter(weekRowTruss6);
 
         console.log('Truss 6 : ' + JSON.stringify(filteredweekRowTruss6));
 
@@ -2690,9 +2685,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberHar4AvalantinoRow1Plant2) + 6;
 
-        const filteredweekRowTruss7 = this.state.allTrussData.filter(
-          weekRowTruss7,
-        );
+        const filteredweekRowTruss7 =
+          this.state.allTrussData.filter(weekRowTruss7);
 
         console.log('Truss 7 : ' + JSON.stringify(filteredweekRowTruss7));
 
@@ -2764,9 +2758,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberHar4AvalantinoRow1Plant2) + 7;
 
-        const filteredweekRowTruss8 = this.state.allTrussData.filter(
-          weekRowTruss8,
-        );
+        const filteredweekRowTruss8 =
+          this.state.allTrussData.filter(weekRowTruss8);
 
         console.log('Truss 8 : ' + JSON.stringify(filteredweekRowTruss8));
 
@@ -2839,9 +2832,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberHar4AvalantinoRow1Plant2) + 8;
 
-        const filteredweekRowTruss9 = this.state.allTrussData.filter(
-          weekRowTruss9,
-        );
+        const filteredweekRowTruss9 =
+          this.state.allTrussData.filter(weekRowTruss9);
 
         console.log('Truss 9 : ' + JSON.stringify(filteredweekRowTruss9));
 
@@ -2913,9 +2905,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberHar4AvalantinoRow1Plant2) + 9;
 
-        const filteredweekRowTruss10 = this.state.allTrussData.filter(
-          weekRowTruss10,
-        );
+        const filteredweekRowTruss10 =
+          this.state.allTrussData.filter(weekRowTruss10);
 
         console.log('Truss 9 : ' + JSON.stringify(filteredweekRowTruss10));
 
@@ -2987,8 +2978,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
 
   changeCheckbox = () => {
     this.setState({
-      Har4AvalantinoRow1Plant2Selected: !this.state
-        .Har4AvalantinoRow1Plant2Selected,
+      Har4AvalantinoRow1Plant2Selected:
+        !this.state.Har4AvalantinoRow1Plant2Selected,
     });
 
     const vart = this.state.Har4AvalantinoRow1Plant2Selected;
@@ -3010,15 +3001,15 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
     const vart = this.state.Har4AvalantinoRow1Plant2Selected;
 
     if (vart == null || vart == false) {
-      const {leavesPerPlantHar4AvalantinoRow1Plant2} = this.state;
-      const {fullySetTrussHar4AvalantinoRow1Plant2} = this.state;
-      const {setTrussLengthHar4AvalantinoRow1Plant2} = this.state;
-      const {weeklyGrowthHar4AvalantinoRow1Plant2} = this.state;
-      const {floweringTrussHeightHar4AvalantinoRow1Plant2} = this.state;
-      const {leafLengthHar4AvalantinoRow1Plant2} = this.state;
-      const {leafWidthHar4AvalantinoRow1Plant2} = this.state;
-      const {stmDiameterHar4AvalantinoRow1Plant2} = this.state;
-      const {lastWeekStmDiameterHar4AvalantinoRow1Plant2} = this.state;
+      const { leavesPerPlantHar4AvalantinoRow1Plant2 } = this.state;
+      const { fullySetTrussHar4AvalantinoRow1Plant2 } = this.state;
+      const { setTrussLengthHar4AvalantinoRow1Plant2 } = this.state;
+      const { weeklyGrowthHar4AvalantinoRow1Plant2 } = this.state;
+      const { floweringTrussHeightHar4AvalantinoRow1Plant2 } = this.state;
+      const { leafLengthHar4AvalantinoRow1Plant2 } = this.state;
+      const { leafWidthHar4AvalantinoRow1Plant2 } = this.state;
+      const { stmDiameterHar4AvalantinoRow1Plant2 } = this.state;
+      const { lastWeekStmDiameterHar4AvalantinoRow1Plant2 } = this.state;
 
       let data = {
         plantRow: '424',
@@ -3029,13 +3020,13 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
         fullySetTruss: this.state.fullySetTrussHar4AvalantinoRow1Plant2,
         setTrussLength: this.state.setTrussLengthHar4AvalantinoRow1Plant2,
         weeklyGrowth: this.state.weeklyGrowthHar4AvalantinoRow1Plant2,
-        floweringTrussHeight: this.state
-          .floweringTrussHeightHar4AvalantinoRow1Plant2,
+        floweringTrussHeight:
+          this.state.floweringTrussHeightHar4AvalantinoRow1Plant2,
         leafLength: this.state.leafLengthHar4AvalantinoRow1Plant2,
         leafWidth: this.state.leafWidthHar4AvalantinoRow1Plant2,
         stmDiameter: this.state.stmDiameterHar4AvalantinoRow1Plant2,
-        lastWeekStmDiameter: this.state
-          .lastWeekStmDiameterHar4AvalantinoRow1Plant2,
+        lastWeekStmDiameter:
+          this.state.lastWeekStmDiameterHar4AvalantinoRow1Plant2,
       };
 
       if (+!isNaN(+leavesPerPlantHar4AvalantinoRow1Plant2)) {
@@ -3049,7 +3040,7 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
                       if (
                         +!isNaN(+lastWeekStmDiameterHar4AvalantinoRow1Plant2)
                       ) {
-                        this.setState({checkboxStatus: 'CHECKED'});
+                        this.setState({ checkboxStatus: 'CHECKED' });
 
                         this.changeCheckbox();
 
@@ -3092,7 +3083,7 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
         Alert.alert('Leaves per plant value looks incorrect');
       }
     } else {
-      this.setState({checkboxStatus: 'UNCHECKED'});
+      this.setState({ checkboxStatus: 'UNCHECKED' });
     }
   };
 
@@ -3557,7 +3548,9 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
   };
 
   onAccessoryPress() {
-    this.setState(({secureTextEntry}) => ({secureTextEntry: !secureTextEntry}));
+    this.setState(({ secureTextEntry }) => ({
+      secureTextEntry: !secureTextEntry,
+    }));
   }
 
   onSubmitFullysetTruss() {
@@ -3600,7 +3593,7 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
   //INITIALIZE ONFOCUS
 
   onFocus() {
-    let {errors = {}} = this.state;
+    let { errors = {} } = this.state;
 
     for (let name in errors) {
       let ref = this[name];
@@ -3610,7 +3603,7 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
       }
     }
 
-    this.setState({errors});
+    this.setState({ errors });
   }
   //
 
@@ -3645,7 +3638,7 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
       }
     });
 
-    this.setState({errors});
+    this.setState({ errors });
   }
 
   updateRef(name, ref) {
@@ -3657,19 +3650,21 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {Platform.OS === 'ios' ? <View style={{marginTop: 15}}></View> : null}
+        {Platform.OS === 'ios' ? <View style={{ marginTop: 15 }}></View> : null}
 
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
             marginLeft: 20,
-          }}>
+          }}
+        >
           <View style={styles.headerImage1}>
             <TouchableOpacity
               onPress={() =>
                 this.props.navigation.push('Har4AvalantinoPlantsRow1')
-              }>
+              }
+            >
               <Image source={require('../assets/back.png')} />
             </TouchableOpacity>
           </View>
@@ -3678,8 +3673,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
             <Text style={styles.text}>HAR 4 - Avalantino</Text>
           </View>
 
-          <View style={{height: 20, width: 20}}>
-            <Text style={{alignSelf: 'center'}}></Text>
+          <View style={{ height: 20, width: 20 }}>
+            <Text style={{ alignSelf: 'center' }}></Text>
           </View>
         </View>
 
@@ -3691,16 +3686,19 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
         <View style={styles.marginMicroSmallDimensionTop}></View>
 
         <KeyboardAvoidingView
-          style={{flex: 1}}
+          style={{ flex: 1 }}
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-          enabled>
+          enabled
+        >
           <ScrollView
             keyboardShouldPersistTaps="handled"
-            scrollEventThrottle={16}>
+            scrollEventThrottle={16}
+          >
             <View
               pointerEvents={
                 this.state.Har4AvalantinoRow1Plant2Selected ? 'none' : 'auto'
-              }>
+              }
+            >
               <View style={styles.formContainer}>
                 <View style={styles.marginSmallDimensionTop}></View>
 
@@ -5704,7 +5702,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
                       this.state.fruitLoadHar4AvalantinoRow1Plant2 >= 40
                         ? styles.borderErrorColor
                         : null,
-                    ]}>
+                    ]}
+                  >
                     <View
                       style={{
                         marginTop: 1,
@@ -5732,7 +5731,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
                       this.state.floweringTrussssHar4AvalantinoRow1Plant2 >= 45
                         ? styles.borderErrorColor
                         : null,
-                    ]}>
+                    ]}
+                  >
                     <View style={styles.row}>
                       <Text style={styles.text4}>Flowering Truss</Text>
                       <Text style={styles.text5}>
@@ -5755,7 +5755,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
                         45
                         ? styles.borderErrorColor
                         : null,
-                    ]}>
+                    ]}
+                  >
                     <View style={styles.row}>
                       <Text style={styles.text4}>Setting Truss</Text>
                       <Text style={styles.text5}>
@@ -5776,7 +5777,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
                       this.state.floweringTrussssHar4AvalantinoRow1Plant2 >= 45
                         ? styles.borderErrorColor
                         : null,
-                    ]}>
+                    ]}
+                  >
                     <View style={styles.row}>
                       <Text style={styles.text4}>Harvest Truss</Text>
                       <Text style={styles.text5}>
@@ -5875,7 +5877,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
                       plant: 2,
                       type: 'HAR 4 - Avalantino',
                     })
-                  }>
+                  }
+                >
                   <Text style={styles.textDataChecker}>Data Checker</Text>
                 </TouchableOpacity>
                 <View style={styles.marginXSmallDimensionTop}></View>
@@ -5887,8 +5890,8 @@ export default class Har4AvalantinoRow1Plant2 extends Component {
                   checkedColor="green"
                   title="HAR 4 Avalantino Plant 2 completed"
                   checked={this.state.Har4AvalantinoRow1Plant2Selected}
-                  textStyle={{fontSize: 16}}
-                  containerStyle={{backgroundColor: 'transparent'}}
+                  textStyle={{ fontSize: 16 }}
+                  containerStyle={{ backgroundColor: 'transparent' }}
                   onPress={() => this.checkStatus()}
                 />
               </View>

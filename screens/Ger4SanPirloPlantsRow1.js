@@ -1,4 +1,4 @@
-import React, {Component, useEffect} from 'react';
+import React, { Component, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,10 +9,10 @@ import {
   Platform,
   Dimensions,
 } from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler';
 import moment from 'moment';
-import AsyncStorage from '@react-native-community/async-storage';
-import {EventRegister} from 'react-native-event-listeners';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { EventRegister } from 'react-native-event-listeners';
 
 var screenWidth = Dimensions.get('window').width / 1.6;
 
@@ -42,7 +42,7 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
     var convertWeekNumber = +weekNumberText;
     var completeWeekNumber = convertWeekNumber + weekNumber;
 
-    this.setState({weekNumber: completeWeekNumber});
+    this.setState({ weekNumber: completeWeekNumber });
 
     /*this.loadData();
 
@@ -182,7 +182,8 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
           style={styles.buttonContainer}
           onPress={() =>
             this.props.navigation.navigate('Ger4SanPirloRow1Plant1')
-          }>
+          }
+        >
           <Text style={styles.buttonText}>
             Plant 1 - Week {this.state.weekNumber}
           </Text>
@@ -194,7 +195,8 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
           style={styles.buttonContainerImage}
           onPress={() =>
             this.props.navigation.navigate('Ger4SanPirloRow1Plant1')
-          }>
+          }
+        >
           <Text style={styles.buttonText}>
             Plant 1 - Week {this.state.weekNumber}
           </Text>
@@ -214,7 +216,8 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
           style={styles.buttonContainer}
           onPress={() =>
             this.props.navigation.navigate('Ger4SanPirloRow1Plant2')
-          }>
+          }
+        >
           <Text style={styles.buttonText}>
             Plant 2 - Week {this.state.weekNumber}
           </Text>
@@ -226,7 +229,8 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
           style={styles.buttonContainerImage}
           onPress={() =>
             this.props.navigation.navigate('Ger4SanPirloRow1Plant2')
-          }>
+          }
+        >
           <Text style={styles.buttonText}>
             Plant 2 - Week {this.state.weekNumber}
           </Text>
@@ -246,7 +250,8 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
           style={styles.buttonContainer}
           onPress={() =>
             this.props.navigation.navigate('Ger4SanPirloRow1Plant3')
-          }>
+          }
+        >
           <Text style={styles.buttonText}>
             Plant 3 - Week {this.state.weekNumber}
           </Text>
@@ -258,7 +263,8 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
           style={styles.buttonContainerImage}
           onPress={() =>
             this.props.navigation.navigate('Ger4SanPirloRow1Plant3')
-          }>
+          }
+        >
           <Text style={styles.buttonText}>
             Plant 3 - Week {this.state.weekNumber}
           </Text>
@@ -278,7 +284,8 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
           style={styles.buttonContainer}
           onPress={() =>
             this.props.navigation.navigate('Ger4SanPirloRow1Plant4')
-          }>
+          }
+        >
           <Text style={styles.buttonText}>
             Plant 4 - Week {this.state.weekNumber}
           </Text>
@@ -290,7 +297,8 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
           style={styles.buttonContainerImage}
           onPress={() =>
             this.props.navigation.navigate('Ger4SanPirloRow1Plant4')
-          }>
+          }
+        >
           <Text style={styles.buttonText}>
             Plant 4 - Week {this.state.weekNumber}
           </Text>
@@ -310,7 +318,8 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
           style={styles.buttonContainer}
           onPress={() =>
             this.props.navigation.navigate('Ger4SanPirloRow1Plant5')
-          }>
+          }
+        >
           <Text style={styles.buttonText}>
             Plant 5 - Week {this.state.weekNumber}
           </Text>
@@ -322,7 +331,8 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
           style={styles.buttonContainerImage}
           onPress={() =>
             this.props.navigation.navigate('Ger4SanPirloRow1Plant5')
-          }>
+          }
+        >
           <Text style={styles.buttonText}>
             Plant 5 - Week {this.state.weekNumber}
           </Text>
@@ -342,7 +352,8 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
           style={styles.buttonContainer}
           onPress={() =>
             this.props.navigation.navigate('Ger4SanPirloRow1Plant6')
-          }>
+          }
+        >
           <Text style={styles.buttonText}>
             Plant 6 - Week {this.state.weekNumber}
           </Text>
@@ -354,7 +365,8 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
           style={styles.buttonContainerImage}
           onPress={() =>
             this.props.navigation.navigate('Ger4SanPirloRow1Plant6')
-          }>
+          }
+        >
           <Text style={styles.buttonText}>
             Plant 6 - Week {this.state.weekNumber}
           </Text>
@@ -374,7 +386,8 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
           style={styles.buttonContainer}
           onPress={() =>
             this.props.navigation.navigate('Ger4SanPirloRow1Plant7')
-          }>
+          }
+        >
           <Text style={styles.buttonText}>
             Plant 7 - Week {this.state.weekNumber}
           </Text>
@@ -386,7 +399,8 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
           style={styles.buttonContainerImage}
           onPress={() =>
             this.props.navigation.navigate('Ger4SanPirloRow1Plant7')
-          }>
+          }
+        >
           <Text style={styles.buttonText}>
             Plant 7 - Week {this.state.weekNumber}
           </Text>
@@ -402,17 +416,19 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {Platform.OS === 'ios' ? <View style={{marginTop: 15}}></View> : null}
+        {Platform.OS === 'ios' ? <View style={{ marginTop: 15 }}></View> : null}
 
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
             marginLeft: 20,
-          }}>
+          }}
+        >
           <View style={styles.headerImage1}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Ger4SanPirloRow')}>
+              onPress={() => this.props.navigation.navigate('Ger4SanPirloRow')}
+            >
               <Image source={require('../assets/back.png')} />
             </TouchableOpacity>
           </View>
@@ -421,8 +437,8 @@ export default class Ger4SanPirloPlantsRow1 extends Component {
             <Text style={styles.text}>GER 4 - San Pirlo / Row 160</Text>
           </View>
 
-          <View style={{height: 20, width: 20}}>
-            <Text style={{alignSelf: 'center'}}></Text>
+          <View style={{ height: 20, width: 20 }}>
+            <Text style={{ alignSelf: 'center' }}></Text>
           </View>
         </View>
 

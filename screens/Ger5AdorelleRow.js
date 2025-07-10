@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,10 +9,10 @@ import {
   Dimensions,
   Platform,
 } from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler';
 import moment from 'moment';
-import AsyncStorage from '@react-native-community/async-storage';
-import {EventRegister} from 'react-native-event-listeners';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { EventRegister } from 'react-native-event-listeners';
 
 var screenWidth = Dimensions.get('window').width / 1.6;
 
@@ -25,17 +25,19 @@ export default class Ger5AdorelleRow extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {Platform.OS === 'ios' ? <View style={{marginTop: 15}}></View> : null}
+        {Platform.OS === 'ios' ? <View style={{ marginTop: 15 }}></View> : null}
 
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
             marginLeft: 20,
-          }}>
+          }}
+        >
           <View style={styles.headerImage1}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('GerHome')}>
+              onPress={() => this.props.navigation.navigate('GerHome')}
+            >
               <Image source={require('../assets/back.png')} />
             </TouchableOpacity>
           </View>
@@ -44,8 +46,8 @@ export default class Ger5AdorelleRow extends Component {
             <Text style={styles.text}>GER 5 - Adorelle</Text>
           </View>
 
-          <View style={{height: 20, width: 20}}>
-            <Text style={{alignSelf: 'center'}}></Text>
+          <View style={{ height: 20, width: 20 }}>
+            <Text style={{ alignSelf: 'center' }}></Text>
           </View>
         </View>
 
@@ -57,7 +59,8 @@ export default class Ger5AdorelleRow extends Component {
               style={styles.buttonContainer}
               onPress={() =>
                 this.props.navigation.navigate('Ger5AdorellePlantsRow1')
-              }>
+              }
+            >
               <Text style={styles.buttonText}>Row 77</Text>
             </TouchableOpacity>
           </View>

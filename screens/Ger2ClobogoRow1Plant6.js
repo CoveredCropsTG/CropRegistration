@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
@@ -12,16 +12,16 @@ import {
   Keyboard,
   KeyboardAvoidingView,
 } from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler';
 import moment from 'moment';
-import AsyncStorage from '@react-native-community/async-storage';
-import {CheckBox} from 'react-native-elements';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { CheckBox } from 'react-native-elements';
 import Database from './Database';
-import {LogBox} from 'react-native';
-import {EventRegister} from 'react-native-event-listeners';
+import { LogBox } from 'react-native';
+import { EventRegister } from 'react-native-event-listeners';
 var screenWidth2 = Dimensions.get('window').width / 1.6;
 
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 let screenWidth = Dimensions.get('window').width;
 let screenHeight = Dimensions.get('window').height;
 const db = new Database();
@@ -34,9 +34,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
 
     this.onFocus = this.onFocus.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.onSubmitleavesPerPlantGer2ClobogoRow1Plant6 = this.onSubmitleavesPerPlantGer2ClobogoRow1Plant6.bind(
-      this,
-    );
+    this.onSubmitleavesPerPlantGer2ClobogoRow1Plant6 =
+      this.onSubmitleavesPerPlantGer2ClobogoRow1Plant6.bind(this);
     this.onSubmitFullysetTruss = this.onSubmitFullysetTruss.bind(this);
     this.onSubmitTrussLength = this.onSubmitTrussLength.bind(this);
     this.onSubmitWeeklyGrowth = this.onSubmitWeeklyGrowth.bind(this);
@@ -44,9 +43,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
     this.onSubmitLeafLength = this.onSubmitLeafLength.bind(this);
     this.onSubmitLeafWidth = this.onSubmitLeafWidth.bind(this);
     this.onSubmitStmDiameter = this.onSubmitStmDiameter.bind(this);
-    this.onSubmitLastWeekStmDiameter = this.onSubmitLastWeekStmDiameter.bind(
-      this,
-    );
+    this.onSubmitLastWeekStmDiameter =
+      this.onSubmitLastWeekStmDiameter.bind(this);
     this.onAccessoryPress = this.onAccessoryPress.bind(this);
 
     this.leavesPerPlantGer2ClobogoRow1Plant6Ref = this.updateRef.bind(
@@ -69,7 +67,7 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
     this.state = {
       //Plants
       weekNumber: '',
-      size: {width, height},
+      size: { width, height },
       plantId: '',
       plantRow: '',
       plantName: '',
@@ -183,7 +181,7 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
   }
 
   goBack() {
-    const {navigation} = this.props;
+    const { navigation } = this.props;
     navigation.goBack();
     navigation.state.params.onBack(); // Call onBack function of ScreenA
   }
@@ -198,7 +196,7 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
     var convertWeekNumber = +weekNumberText;
     var completeWeekNumber = convertWeekNumber + weekNumber;
 
-    this.setState({weekNumber: completeWeekNumber});
+    this.setState({ weekNumber: completeWeekNumber });
 
     LogBox.ignoreAllLogs(true);
 
@@ -239,11 +237,10 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
             d.plantRow === '70/71' &&
             d.plantWeek === filteredPlantWeek;
 
-          const filteredweekRowPlant = allPlant.plant_details.filter(
-            weekRowPlant,
-          );
+          const filteredweekRowPlant =
+            allPlant.plant_details.filter(weekRowPlant);
 
-          this.setState({allPlantData: filteredweekRowPlant});
+          this.setState({ allPlantData: filteredweekRowPlant });
 
           this.setData();
         })
@@ -264,11 +261,10 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
             d.plantRow === '70/71' &&
             d.plantWeek === filteredTrussWeek;
 
-          const filteredweekRowTruss = allTruss.truss_details.filter(
-            weekRowTruss,
-          );
+          const filteredweekRowTruss =
+            allTruss.truss_details.filter(weekRowTruss);
 
-          this.setState({allTrussData: filteredweekRowTruss});
+          this.setState({ allTrussData: filteredweekRowTruss });
           this.renderLastWeekTrussDetails();
         })
         .done();
@@ -1314,7 +1310,7 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
 
   _onLayoutDidChange = e => {
     const layout = e.nativeEvent.layout;
-    this.setState({size: {width: layout.width, height: layout.height}});
+    this.setState({ size: { width: layout.width, height: layout.height } });
   };
 
   updatePlantsTextInput = (text, field) => {
@@ -1852,8 +1848,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
                     if (this.state.setFlowers1Ger2ClobogoRow1Plant6 === '') {
                       if (this.state.setFlowersGer2ClobogoRow1Plant6 === '') {
                       } else {
-                        var number01 = this.state
-                          .trussNumberGer2ClobogoRow1Plant6;
+                        var number01 =
+                          this.state.trussNumberGer2ClobogoRow1Plant6;
 
                         flowerPruningNumner = Number.parseInt(
                           this.state.pruningNumberGer2ClobogoRow1Plant6,
@@ -1876,7 +1872,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
                         );
                         this.setState({
                           floweringTrussssGer2ClobogoRow1Plant6: floweringTruss,
-                          pruneFloweringGer2ClobogoRow1Plant6: flowerPruningNumner,
+                          pruneFloweringGer2ClobogoRow1Plant6:
+                            flowerPruningNumner,
                         });
                         this.setItem(
                           'floweringTrussssGer2ClobogoRow1Plant6',
@@ -1914,7 +1911,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
                       console.log('Flowering Truss Value : ' + floweringTruss);
                       this.setState({
                         floweringTrussssGer2ClobogoRow1Plant6: floweringTruss,
-                        pruneFloweringGer2ClobogoRow1Plant6: flowerPruningNumner,
+                        pruneFloweringGer2ClobogoRow1Plant6:
+                          flowerPruningNumner,
                       });
                       this.setItem(
                         'floweringTrussssGer2ClobogoRow1Plant6',
@@ -2196,9 +2194,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberGer2ClobogoRow1Plant6);
 
-        const filteredweekRowTruss1 = this.state.allTrussData.filter(
-          weekRowTruss1,
-        );
+        const filteredweekRowTruss1 =
+          this.state.allTrussData.filter(weekRowTruss1);
 
         console.log('Truss 1 : ' + JSON.stringify(filteredweekRowTruss1));
 
@@ -2270,9 +2267,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberGer2ClobogoRow1Plant6) + 1;
 
-        const filteredweekRowTruss2 = this.state.allTrussData.filter(
-          weekRowTruss2,
-        );
+        const filteredweekRowTruss2 =
+          this.state.allTrussData.filter(weekRowTruss2);
 
         console.log('Truss 2 : ' + JSON.stringify(filteredweekRowTruss2));
 
@@ -2345,9 +2341,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberGer2ClobogoRow1Plant6) + 2;
 
-        const filteredweekRowTruss3 = this.state.allTrussData.filter(
-          weekRowTruss3,
-        );
+        const filteredweekRowTruss3 =
+          this.state.allTrussData.filter(weekRowTruss3);
 
         console.log('Truss 3 : ' + JSON.stringify(filteredweekRowTruss3));
 
@@ -2420,9 +2415,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberGer2ClobogoRow1Plant6) + 3;
 
-        const filteredweekRowTruss4 = this.state.allTrussData.filter(
-          weekRowTruss4,
-        );
+        const filteredweekRowTruss4 =
+          this.state.allTrussData.filter(weekRowTruss4);
 
         console.log('Truss 4 : ' + JSON.stringify(filteredweekRowTruss4));
 
@@ -2495,9 +2489,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberGer2ClobogoRow1Plant6) + 4;
 
-        const filteredweekRowTruss5 = this.state.allTrussData.filter(
-          weekRowTruss5,
-        );
+        const filteredweekRowTruss5 =
+          this.state.allTrussData.filter(weekRowTruss5);
 
         console.log('Truss 5 : ' + JSON.stringify(filteredweekRowTruss5));
 
@@ -2570,9 +2563,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberGer2ClobogoRow1Plant6) + 5;
 
-        const filteredweekRowTruss6 = this.state.allTrussData.filter(
-          weekRowTruss6,
-        );
+        const filteredweekRowTruss6 =
+          this.state.allTrussData.filter(weekRowTruss6);
 
         console.log('Truss 6 : ' + JSON.stringify(filteredweekRowTruss6));
 
@@ -2645,9 +2637,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberGer2ClobogoRow1Plant6) + 6;
 
-        const filteredweekRowTruss7 = this.state.allTrussData.filter(
-          weekRowTruss7,
-        );
+        const filteredweekRowTruss7 =
+          this.state.allTrussData.filter(weekRowTruss7);
 
         console.log('Truss 7 : ' + JSON.stringify(filteredweekRowTruss7));
 
@@ -2719,9 +2710,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberGer2ClobogoRow1Plant6) + 7;
 
-        const filteredweekRowTruss8 = this.state.allTrussData.filter(
-          weekRowTruss8,
-        );
+        const filteredweekRowTruss8 =
+          this.state.allTrussData.filter(weekRowTruss8);
 
         console.log('Truss 8 : ' + JSON.stringify(filteredweekRowTruss8));
 
@@ -2794,9 +2784,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberGer2ClobogoRow1Plant6) + 8;
 
-        const filteredweekRowTruss9 = this.state.allTrussData.filter(
-          weekRowTruss9,
-        );
+        const filteredweekRowTruss9 =
+          this.state.allTrussData.filter(weekRowTruss9);
 
         console.log('Truss 9 : ' + JSON.stringify(filteredweekRowTruss9));
 
@@ -2868,9 +2857,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberGer2ClobogoRow1Plant6) + 9;
 
-        const filteredweekRowTruss10 = this.state.allTrussData.filter(
-          weekRowTruss10,
-        );
+        const filteredweekRowTruss10 =
+          this.state.allTrussData.filter(weekRowTruss10);
 
         console.log('Truss 9 : ' + JSON.stringify(filteredweekRowTruss10));
 
@@ -2964,15 +2952,15 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
     const vart = this.state.Ger2ClobogoRow1Plant6Selected;
 
     if (vart == null || vart == false) {
-      const {leavesPerPlantGer2ClobogoRow1Plant6} = this.state;
-      const {fullySetTrussGer2ClobogoRow1Plant6} = this.state;
-      const {setTrussLengthGer2ClobogoRow1Plant6} = this.state;
-      const {weeklyGrowthGer2ClobogoRow1Plant6} = this.state;
-      const {floweringTrussHeightGer2ClobogoRow1Plant6} = this.state;
-      const {leafLengthGer2ClobogoRow1Plant6} = this.state;
-      const {leafWidthGer2ClobogoRow1Plant6} = this.state;
-      const {stmDiameterGer2ClobogoRow1Plant6} = this.state;
-      const {lastWeekStmDiameterGer2ClobogoRow1Plant6} = this.state;
+      const { leavesPerPlantGer2ClobogoRow1Plant6 } = this.state;
+      const { fullySetTrussGer2ClobogoRow1Plant6 } = this.state;
+      const { setTrussLengthGer2ClobogoRow1Plant6 } = this.state;
+      const { weeklyGrowthGer2ClobogoRow1Plant6 } = this.state;
+      const { floweringTrussHeightGer2ClobogoRow1Plant6 } = this.state;
+      const { leafLengthGer2ClobogoRow1Plant6 } = this.state;
+      const { leafWidthGer2ClobogoRow1Plant6 } = this.state;
+      const { stmDiameterGer2ClobogoRow1Plant6 } = this.state;
+      const { lastWeekStmDiameterGer2ClobogoRow1Plant6 } = this.state;
 
       let data = {
         plantRow: '70/71',
@@ -2983,13 +2971,13 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
         fullySetTruss: this.state.fullySetTrussGer2ClobogoRow1Plant6,
         setTrussLength: this.state.setTrussLengthGer2ClobogoRow1Plant6,
         weeklyGrowth: this.state.weeklyGrowthGer2ClobogoRow1Plant6,
-        floweringTrussHeight: this.state
-          .floweringTrussHeightGer2ClobogoRow1Plant6,
+        floweringTrussHeight:
+          this.state.floweringTrussHeightGer2ClobogoRow1Plant6,
         leafLength: this.state.leafLengthGer2ClobogoRow1Plant6,
         leafWidth: this.state.leafWidthGer2ClobogoRow1Plant6,
         stmDiameter: this.state.stmDiameterGer2ClobogoRow1Plant6,
-        lastWeekStmDiameter: this.state
-          .lastWeekStmDiameterGer2ClobogoRow1Plant6,
+        lastWeekStmDiameter:
+          this.state.lastWeekStmDiameterGer2ClobogoRow1Plant6,
       };
 
       if (+!isNaN(+leavesPerPlantGer2ClobogoRow1Plant6)) {
@@ -3001,7 +2989,7 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
                   if (+!isNaN(+leafWidthGer2ClobogoRow1Plant6)) {
                     if (+!isNaN(+stmDiameterGer2ClobogoRow1Plant6)) {
                       if (+!isNaN(+lastWeekStmDiameterGer2ClobogoRow1Plant6)) {
-                        this.setState({checkboxStatus: 'CHECKED'});
+                        this.setState({ checkboxStatus: 'CHECKED' });
 
                         this.changeCheckbox();
 
@@ -3044,7 +3032,7 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
         Alert.alert('Leaves per plant value looks incorrect');
       }
     } else {
-      this.setState({checkboxStatus: 'UNCHECKED'});
+      this.setState({ checkboxStatus: 'UNCHECKED' });
     }
   };
 
@@ -3500,7 +3488,9 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
   };
 
   onAccessoryPress() {
-    this.setState(({secureTextEntry}) => ({secureTextEntry: !secureTextEntry}));
+    this.setState(({ secureTextEntry }) => ({
+      secureTextEntry: !secureTextEntry,
+    }));
   }
 
   onSubmitFullysetTruss() {
@@ -3543,7 +3533,7 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
   //INITIALIZE ONFOCUS
 
   onFocus() {
-    let {errors = {}} = this.state;
+    let { errors = {} } = this.state;
 
     for (let name in errors) {
       let ref = this[name];
@@ -3553,7 +3543,7 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
       }
     }
 
-    this.setState({errors});
+    this.setState({ errors });
   }
   //
 
@@ -3588,7 +3578,7 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
       }
     });
 
-    this.setState({errors});
+    this.setState({ errors });
   }
 
   updateRef(name, ref) {
@@ -3600,19 +3590,21 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {Platform.OS === 'ios' ? <View style={{marginTop: 15}}></View> : null}
+        {Platform.OS === 'ios' ? <View style={{ marginTop: 15 }}></View> : null}
 
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
             marginLeft: 20,
-          }}>
+          }}
+        >
           <View style={styles.headerImage1}>
             <TouchableOpacity
               onPress={() =>
                 this.props.navigation.push('Ger2ClobogoPlantsRow1')
-              }>
+              }
+            >
               <Image source={require('../assets/back.png')} />
             </TouchableOpacity>
           </View>
@@ -3621,8 +3613,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
             <Text style={styles.text}>GER 2 - Clobogo</Text>
           </View>
 
-          <View style={{height: 20, width: 20}}>
-            <Text style={{alignSelf: 'center'}}></Text>
+          <View style={{ height: 20, width: 20 }}>
+            <Text style={{ alignSelf: 'center' }}></Text>
           </View>
         </View>
 
@@ -3634,16 +3626,19 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
         <View style={styles.marginMicroSmallDimensionTop}></View>
 
         <KeyboardAvoidingView
-          style={{flex: 1}}
+          style={{ flex: 1 }}
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-          enabled>
+          enabled
+        >
           <ScrollView
             keyboardShouldPersistTaps="handled"
-            scrollEventThrottle={16}>
+            scrollEventThrottle={16}
+          >
             <View
               pointerEvents={
                 this.state.Ger2ClobogoRow1Plant6Selected ? 'none' : 'auto'
-              }>
+              }
+            >
               <View style={styles.formContainer}>
                 <View style={styles.marginSmallDimensionTop}></View>
 
@@ -5642,7 +5637,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
                       this.state.fruitLoadGer2ClobogoRow1Plant6 >= 40
                         ? styles.borderErrorColor
                         : null,
-                    ]}>
+                    ]}
+                  >
                     <View
                       style={{
                         marginTop: 1,
@@ -5669,7 +5665,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
                       this.state.floweringTrussssGer2ClobogoRow1Plant6 >= 45
                         ? styles.borderErrorColor
                         : null,
-                    ]}>
+                    ]}
+                  >
                     <View style={styles.row}>
                       <Text style={styles.text4}>Flowering Truss</Text>
                       <Text style={styles.text5}>
@@ -5690,7 +5687,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
                       this.state.settingTrussNumberGer2ClobogoRow1Plant6 >= 45
                         ? styles.borderErrorColor
                         : null,
-                    ]}>
+                    ]}
+                  >
                     <View style={styles.row}>
                       <Text style={styles.text4}>Setting Truss</Text>
                       <Text style={styles.text5}>
@@ -5710,7 +5708,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
                       this.state.floweringTrussssGer2ClobogoRow1Plant6 >= 45
                         ? styles.borderErrorColor
                         : null,
-                    ]}>
+                    ]}
+                  >
                     <View style={styles.row}>
                       <Text style={styles.text4}>Harvest Truss</Text>
                       <Text style={styles.text5}>
@@ -5808,7 +5807,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
                       row: '70/71',
                       plant: 6,
                     })
-                  }>
+                  }
+                >
                   <Text style={styles.textDataChecker}>Data Checker</Text>
                 </TouchableOpacity>
                 <View style={styles.marginXSmallDimensionTop}></View>
@@ -5820,8 +5820,8 @@ export default class Ger2ClobogoRow1Plant6 extends Component {
                   checkedColor="green"
                   title="GER 2 Clobogo Plant 6 completed"
                   checked={this.state.Ger2ClobogoRow1Plant6Selected}
-                  textStyle={{fontSize: 16}}
-                  containerStyle={{backgroundColor: 'transparent'}}
+                  textStyle={{ fontSize: 16 }}
+                  containerStyle={{ backgroundColor: 'transparent' }}
                   onPress={() => this.checkStatus()}
                 />
               </View>

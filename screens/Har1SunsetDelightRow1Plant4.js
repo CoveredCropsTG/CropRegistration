@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
@@ -12,16 +12,16 @@ import {
   Keyboard,
   KeyboardAvoidingView,
 } from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler';
 import moment from 'moment';
-import AsyncStorage from '@react-native-community/async-storage';
-import {CheckBox} from 'react-native-elements';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { CheckBox } from 'react-native-elements';
 import Database from './Database';
-import {LogBox} from 'react-native';
-import {EventRegister} from 'react-native-event-listeners';
+import { LogBox } from 'react-native';
+import { EventRegister } from 'react-native-event-listeners';
 var screenWidth2 = Dimensions.get('window').width / 1.6;
 
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 let screenWidth = Dimensions.get('window').width;
 let screenHeight = Dimensions.get('window').height;
 const db = new Database();
@@ -34,9 +34,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
 
     this.onFocus = this.onFocus.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.onSubmitleavesPerPlantHar1SunsetDelightRow1Plant4 = this.onSubmitleavesPerPlantHar1SunsetDelightRow1Plant4.bind(
-      this,
-    );
+    this.onSubmitleavesPerPlantHar1SunsetDelightRow1Plant4 =
+      this.onSubmitleavesPerPlantHar1SunsetDelightRow1Plant4.bind(this);
     this.onSubmitFullysetTruss = this.onSubmitFullysetTruss.bind(this);
     this.onSubmitTrussLength = this.onSubmitTrussLength.bind(this);
     this.onSubmitWeeklyGrowth = this.onSubmitWeeklyGrowth.bind(this);
@@ -44,9 +43,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
     this.onSubmitLeafLength = this.onSubmitLeafLength.bind(this);
     this.onSubmitLeafWidth = this.onSubmitLeafWidth.bind(this);
     this.onSubmitStmDiameter = this.onSubmitStmDiameter.bind(this);
-    this.onSubmitLastWeekStmDiameter = this.onSubmitLastWeekStmDiameter.bind(
-      this,
-    );
+    this.onSubmitLastWeekStmDiameter =
+      this.onSubmitLastWeekStmDiameter.bind(this);
     this.onAccessoryPress = this.onAccessoryPress.bind(this);
 
     this.leavesPerPlantHar1SunsetDelightRow1Plant4Ref = this.updateRef.bind(
@@ -69,7 +67,7 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
     this.state = {
       //Plants
       weekNumber: '',
-      size: {width, height},
+      size: { width, height },
       plantId: '',
       plantRow: '',
       plantName: '',
@@ -183,7 +181,7 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
   }
 
   goBack() {
-    const {navigation} = this.props;
+    const { navigation } = this.props;
     navigation.goBack();
     navigation.state.params.onBack(); // Call onBack function of ScreenA
   }
@@ -198,7 +196,7 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
     var convertWeekNumber = +weekNumberText;
     var completeWeekNumber = convertWeekNumber + weekNumber;
 
-    this.setState({weekNumber: completeWeekNumber});
+    this.setState({ weekNumber: completeWeekNumber });
 
     LogBox.ignoreAllLogs(true);
 
@@ -239,11 +237,10 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
             d.plantRow === '123' &&
             d.plantWeek === filteredPlantWeek;
 
-          const filteredweekRowPlant = allPlant.plant_details.filter(
-            weekRowPlant,
-          );
+          const filteredweekRowPlant =
+            allPlant.plant_details.filter(weekRowPlant);
 
-          this.setState({allPlantData: filteredweekRowPlant});
+          this.setState({ allPlantData: filteredweekRowPlant });
 
           this.setData();
         })
@@ -264,11 +261,10 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
             d.plantRow === '123' &&
             d.plantWeek === filteredTrussWeek;
 
-          const filteredweekRowTruss = allTruss.truss_details.filter(
-            weekRowTruss,
-          );
+          const filteredweekRowTruss =
+            allTruss.truss_details.filter(weekRowTruss);
 
-          this.setState({allTrussData: filteredweekRowTruss});
+          this.setState({ allTrussData: filteredweekRowTruss });
           this.renderLastWeekTrussDetails();
         })
         .done();
@@ -498,9 +494,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
       AsyncStorage.getItem('floweringTrussHeightHar1SunsetDelightRow1Plant4')
         .then(text5Value => {
           this.setState({
-            floweringTrussHeightHar1SunsetDelightRow1Plant4: JSON.parse(
-              text5Value,
-            ),
+            floweringTrussHeightHar1SunsetDelightRow1Plant4:
+              JSON.parse(text5Value),
           });
         })
         .done();
@@ -536,9 +531,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
       AsyncStorage.getItem('lastWeekStmDiameterHar1SunsetDelightRow1Plant4')
         .then(text9Value => {
           this.setState({
-            lastWeekStmDiameterHar1SunsetDelightRow1Plant4: JSON.parse(
-              text9Value,
-            ),
+            lastWeekStmDiameterHar1SunsetDelightRow1Plant4:
+              JSON.parse(text9Value),
           });
         })
         .done();
@@ -696,9 +690,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text18Value => {
           if (text18Value !== null) {
             this.setState({
-              pruningNumber1Har1SunsetDelightRow1Plant4: JSON.parse(
-                text18Value,
-              ),
+              pruningNumber1Har1SunsetDelightRow1Plant4:
+                JSON.parse(text18Value),
             });
           }
         })
@@ -709,9 +702,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text19Value => {
           if (text19Value !== null) {
             this.setState({
-              fruitDiameter1Har1SunsetDelightRow1Plant4: JSON.parse(
-                text19Value,
-              ),
+              fruitDiameter1Har1SunsetDelightRow1Plant4:
+                JSON.parse(text19Value),
             });
           }
         })
@@ -747,9 +739,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text19Value => {
           if (text19Value !== null) {
             this.setState({
-              pruningNumber2Har1SunsetDelightRow1Plant4: JSON.parse(
-                text19Value,
-              ),
+              pruningNumber2Har1SunsetDelightRow1Plant4:
+                JSON.parse(text19Value),
             });
           }
         })
@@ -760,9 +751,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text20Value => {
           if (text20Value !== null) {
             this.setState({
-              fruitDiameter2Har1SunsetDelightRow1Plant4: JSON.parse(
-                text20Value,
-              ),
+              fruitDiameter2Har1SunsetDelightRow1Plant4:
+                JSON.parse(text20Value),
             });
           }
         })
@@ -798,9 +788,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text23Value => {
           if (text23Value !== null) {
             this.setState({
-              pruningNumber3Har1SunsetDelightRow1Plant4: JSON.parse(
-                text23Value,
-              ),
+              pruningNumber3Har1SunsetDelightRow1Plant4:
+                JSON.parse(text23Value),
             });
           }
         })
@@ -811,9 +800,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text24Value => {
           if (text24Value !== null) {
             this.setState({
-              fruitDiameter3Har1SunsetDelightRow1Plant4: JSON.parse(
-                text24Value,
-              ),
+              fruitDiameter3Har1SunsetDelightRow1Plant4:
+                JSON.parse(text24Value),
             });
           }
         })
@@ -849,9 +837,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text27Value => {
           if (text27Value !== null) {
             this.setState({
-              pruningNumber4Har1SunsetDelightRow1Plant4: JSON.parse(
-                text27Value,
-              ),
+              pruningNumber4Har1SunsetDelightRow1Plant4:
+                JSON.parse(text27Value),
             });
           }
         })
@@ -862,9 +849,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text28Value => {
           if (text28Value !== null) {
             this.setState({
-              fruitDiameter4Har1SunsetDelightRow1Plant4: JSON.parse(
-                text28Value,
-              ),
+              fruitDiameter4Har1SunsetDelightRow1Plant4:
+                JSON.parse(text28Value),
             });
           }
         })
@@ -900,9 +886,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text31Value => {
           if (text31Value !== null) {
             this.setState({
-              pruningNumber5Har1SunsetDelightRow1Plant4: JSON.parse(
-                text31Value,
-              ),
+              pruningNumber5Har1SunsetDelightRow1Plant4:
+                JSON.parse(text31Value),
             });
           }
         })
@@ -913,9 +898,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text32Value => {
           if (text32Value !== null) {
             this.setState({
-              fruitDiameter5Har1SunsetDelightRow1Plant4: JSON.parse(
-                text32Value,
-              ),
+              fruitDiameter5Har1SunsetDelightRow1Plant4:
+                JSON.parse(text32Value),
             });
           }
         })
@@ -951,9 +935,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text35Value => {
           if (text35Value !== null) {
             this.setState({
-              pruningNumber6Har1SunsetDelightRow1Plant4: JSON.parse(
-                text35Value,
-              ),
+              pruningNumber6Har1SunsetDelightRow1Plant4:
+                JSON.parse(text35Value),
             });
           }
         })
@@ -964,9 +947,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text36Value => {
           if (text36Value !== null) {
             this.setState({
-              fruitDiameter6Har1SunsetDelightRow1Plant4: JSON.parse(
-                text36Value,
-              ),
+              fruitDiameter6Har1SunsetDelightRow1Plant4:
+                JSON.parse(text36Value),
             });
           }
         })
@@ -1002,9 +984,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text39Value => {
           if (text39Value !== null) {
             this.setState({
-              pruningNumber7Har1SunsetDelightRow1Plant4: JSON.parse(
-                text39Value,
-              ),
+              pruningNumber7Har1SunsetDelightRow1Plant4:
+                JSON.parse(text39Value),
             });
           }
         })
@@ -1015,9 +996,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text40Value => {
           if (text40Value !== null) {
             this.setState({
-              fruitDiameter7Har1SunsetDelightRow1Plant4: JSON.parse(
-                text40Value,
-              ),
+              fruitDiameter7Har1SunsetDelightRow1Plant4:
+                JSON.parse(text40Value),
             });
           }
         })
@@ -1053,9 +1033,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text43Value => {
           if (text43Value !== null) {
             this.setState({
-              pruningNumber8Har1SunsetDelightRow1Plant4: JSON.parse(
-                text43Value,
-              ),
+              pruningNumber8Har1SunsetDelightRow1Plant4:
+                JSON.parse(text43Value),
             });
           }
         })
@@ -1066,9 +1045,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text44Value => {
           if (text44Value !== null) {
             this.setState({
-              fruitDiameter8Har1SunsetDelightRow1Plant4: JSON.parse(
-                text44Value,
-              ),
+              fruitDiameter8Har1SunsetDelightRow1Plant4:
+                JSON.parse(text44Value),
             });
           }
         })
@@ -1104,9 +1082,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text47Value => {
           if (text47Value !== null) {
             this.setState({
-              pruningNumber9Har1SunsetDelightRow1Plant4: JSON.parse(
-                text47Value,
-              ),
+              pruningNumber9Har1SunsetDelightRow1Plant4:
+                JSON.parse(text47Value),
             });
           }
         })
@@ -1117,9 +1094,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text48Value => {
           if (text48Value !== null) {
             this.setState({
-              fruitDiameter9Har1SunsetDelightRow1Plant4: JSON.parse(
-                text48Value,
-              ),
+              fruitDiameter9Har1SunsetDelightRow1Plant4:
+                JSON.parse(text48Value),
             });
           }
         })
@@ -1144,9 +1120,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text50Value => {
           if (text50Value !== null) {
             this.setState({
-              floweringTrussssHar1SunsetDelightRow1Plant4: JSON.parse(
-                text50Value,
-              ),
+              floweringTrussssHar1SunsetDelightRow1Plant4:
+                JSON.parse(text50Value),
             });
           }
         })
@@ -1157,9 +1132,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         .then(text51Value => {
           if (text51Value !== null) {
             this.setState({
-              settingTrussNumberHar1SunsetDelightRow1Plant4: JSON.parse(
-                text51Value,
-              ),
+              settingTrussNumberHar1SunsetDelightRow1Plant4:
+                JSON.parse(text51Value),
             });
           }
         })
@@ -1367,7 +1341,7 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
 
   _onLayoutDidChange = e => {
     const layout = e.nativeEvent.layout;
-    this.setState({size: {width: layout.width, height: layout.height}});
+    this.setState({ size: { width: layout.width, height: layout.height } });
   };
 
   updatePlantsTextInput = (text, field) => {
@@ -1635,7 +1609,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                         ).toFixed(2);
                         console.log('Setting Truss Number : ' + settingTruss);
                         this.setState({
-                          settingTrussNumberHar1SunsetDelightRow1Plant4: settingTruss,
+                          settingTrussNumberHar1SunsetDelightRow1Plant4:
+                            settingTruss,
                           settingTruss: trussNum,
                           prunSettingHar1SunsetDelightRow1Plant4: pruningSet,
                         });
@@ -1668,7 +1643,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                       ).toFixed(2);
                       console.log('Setting Truss Number 1 : ' + settingTruss);
                       this.setState({
-                        settingTrussNumberHar1SunsetDelightRow1Plant4: settingTruss,
+                        settingTrussNumberHar1SunsetDelightRow1Plant4:
+                          settingTruss,
                         settingTruss: trussNum,
                         prunSettingHar1SunsetDelightRow1Plant4: pruningSet,
                       });
@@ -1701,7 +1677,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                     ).toFixed(2);
                     console.log('Setting Truss Number 2 : ' + settingTruss);
                     this.setState({
-                      settingTrussNumberHar1SunsetDelightRow1Plant4: settingTruss,
+                      settingTrussNumberHar1SunsetDelightRow1Plant4:
+                        settingTruss,
                       settingTruss: trussNum,
                       prunSettingHar1SunsetDelightRow1Plant4: pruningSet,
                     });
@@ -1945,8 +1922,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                         this.state.setFlowersHar1SunsetDelightRow1Plant4 === ''
                       ) {
                       } else {
-                        var number01 = this.state
-                          .trussNumberHar1SunsetDelightRow1Plant4;
+                        var number01 =
+                          this.state.trussNumberHar1SunsetDelightRow1Plant4;
 
                         flowerPruningNumner = Number.parseInt(
                           this.state.pruningNumberHar1SunsetDelightRow1Plant4,
@@ -1968,8 +1945,10 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                           'Flowering Truss Value : ' + floweringTruss,
                         );
                         this.setState({
-                          floweringTrussssHar1SunsetDelightRow1Plant4: floweringTruss,
-                          pruneFloweringHar1SunsetDelightRow1Plant4: flowerPruningNumner,
+                          floweringTrussssHar1SunsetDelightRow1Plant4:
+                            floweringTruss,
+                          pruneFloweringHar1SunsetDelightRow1Plant4:
+                            flowerPruningNumner,
                         });
                         this.setItem(
                           'floweringTrussssHar1SunsetDelightRow1Plant4',
@@ -2006,8 +1985,10 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                       ).toFixed(2);
                       console.log('Flowering Truss Value : ' + floweringTruss);
                       this.setState({
-                        floweringTrussssHar1SunsetDelightRow1Plant4: floweringTruss,
-                        pruneFloweringHar1SunsetDelightRow1Plant4: flowerPruningNumner,
+                        floweringTrussssHar1SunsetDelightRow1Plant4:
+                          floweringTruss,
+                        pruneFloweringHar1SunsetDelightRow1Plant4:
+                          flowerPruningNumner,
                       });
                       this.setItem(
                         'floweringTrussssHar1SunsetDelightRow1Plant4',
@@ -2040,8 +2021,10 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                     ).toFixed(2);
                     console.log('Flowering Truss Value : ' + floweringTruss);
                     this.setState({
-                      floweringTrussssHar1SunsetDelightRow1Plant4: floweringTruss,
-                      pruneFloweringHar1SunsetDelightRow1Plant4: flowerPruningNumner,
+                      floweringTrussssHar1SunsetDelightRow1Plant4:
+                        floweringTruss,
+                      pruneFloweringHar1SunsetDelightRow1Plant4:
+                        flowerPruningNumner,
                     });
                     this.setItem(
                       'floweringTrussssHar1SunsetDelightRow1Plant4',
@@ -2075,7 +2058,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                   console.log('Flowering Truss Value : ' + floweringTruss);
                   this.setState({
                     floweringTrussssHar1SunsetDelightRow1Plant4: floweringTruss,
-                    pruneFloweringHar1SunsetDelightRow1Plant4: flowerPruningNumner,
+                    pruneFloweringHar1SunsetDelightRow1Plant4:
+                      flowerPruningNumner,
                   });
 
                   this.setItem(
@@ -2110,7 +2094,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                 console.log('Flowering Truss Value : ' + floweringTruss);
                 this.setState({
                   floweringTrussssHar1SunsetDelightRow1Plant4: floweringTruss,
-                  pruneFloweringHar1SunsetDelightRow1Plant4: flowerPruningNumner,
+                  pruneFloweringHar1SunsetDelightRow1Plant4:
+                    flowerPruningNumner,
                 });
 
                 this.setItem(
@@ -2306,9 +2291,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
           d.trussNumber ===
           Number.parseInt(this.state.trussNumberHar1SunsetDelightRow1Plant4);
 
-        const filteredweekRowTruss1 = this.state.allTrussData.filter(
-          weekRowTruss1,
-        );
+        const filteredweekRowTruss1 =
+          this.state.allTrussData.filter(weekRowTruss1);
 
         console.log('Truss 1 : ' + JSON.stringify(filteredweekRowTruss1));
 
@@ -2382,9 +2366,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
           Number.parseInt(this.state.trussNumberHar1SunsetDelightRow1Plant4) +
             1;
 
-        const filteredweekRowTruss2 = this.state.allTrussData.filter(
-          weekRowTruss2,
-        );
+        const filteredweekRowTruss2 =
+          this.state.allTrussData.filter(weekRowTruss2);
 
         console.log('Truss 2 : ' + JSON.stringify(filteredweekRowTruss2));
 
@@ -2459,9 +2442,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
           Number.parseInt(this.state.trussNumberHar1SunsetDelightRow1Plant4) +
             2;
 
-        const filteredweekRowTruss3 = this.state.allTrussData.filter(
-          weekRowTruss3,
-        );
+        const filteredweekRowTruss3 =
+          this.state.allTrussData.filter(weekRowTruss3);
 
         console.log('Truss 3 : ' + JSON.stringify(filteredweekRowTruss3));
 
@@ -2536,9 +2518,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
           Number.parseInt(this.state.trussNumberHar1SunsetDelightRow1Plant4) +
             3;
 
-        const filteredweekRowTruss4 = this.state.allTrussData.filter(
-          weekRowTruss4,
-        );
+        const filteredweekRowTruss4 =
+          this.state.allTrussData.filter(weekRowTruss4);
 
         console.log('Truss 4 : ' + JSON.stringify(filteredweekRowTruss4));
 
@@ -2613,9 +2594,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
           Number.parseInt(this.state.trussNumberHar1SunsetDelightRow1Plant4) +
             4;
 
-        const filteredweekRowTruss5 = this.state.allTrussData.filter(
-          weekRowTruss5,
-        );
+        const filteredweekRowTruss5 =
+          this.state.allTrussData.filter(weekRowTruss5);
 
         console.log('Truss 5 : ' + JSON.stringify(filteredweekRowTruss5));
 
@@ -2690,9 +2670,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
           Number.parseInt(this.state.trussNumberHar1SunsetDelightRow1Plant4) +
             5;
 
-        const filteredweekRowTruss6 = this.state.allTrussData.filter(
-          weekRowTruss6,
-        );
+        const filteredweekRowTruss6 =
+          this.state.allTrussData.filter(weekRowTruss6);
 
         console.log('Truss 6 : ' + JSON.stringify(filteredweekRowTruss6));
 
@@ -2767,9 +2746,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
           Number.parseInt(this.state.trussNumberHar1SunsetDelightRow1Plant4) +
             6;
 
-        const filteredweekRowTruss7 = this.state.allTrussData.filter(
-          weekRowTruss7,
-        );
+        const filteredweekRowTruss7 =
+          this.state.allTrussData.filter(weekRowTruss7);
 
         console.log('Truss 7 : ' + JSON.stringify(filteredweekRowTruss7));
 
@@ -2843,9 +2821,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
           Number.parseInt(this.state.trussNumberHar1SunsetDelightRow1Plant4) +
             7;
 
-        const filteredweekRowTruss8 = this.state.allTrussData.filter(
-          weekRowTruss8,
-        );
+        const filteredweekRowTruss8 =
+          this.state.allTrussData.filter(weekRowTruss8);
 
         console.log('Truss 8 : ' + JSON.stringify(filteredweekRowTruss8));
 
@@ -2920,9 +2897,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
           Number.parseInt(this.state.trussNumberHar1SunsetDelightRow1Plant4) +
             8;
 
-        const filteredweekRowTruss9 = this.state.allTrussData.filter(
-          weekRowTruss9,
-        );
+        const filteredweekRowTruss9 =
+          this.state.allTrussData.filter(weekRowTruss9);
 
         console.log('Truss 9 : ' + JSON.stringify(filteredweekRowTruss9));
 
@@ -2996,9 +2972,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
           Number.parseInt(this.state.trussNumberHar1SunsetDelightRow1Plant4) +
             9;
 
-        const filteredweekRowTruss10 = this.state.allTrussData.filter(
-          weekRowTruss10,
-        );
+        const filteredweekRowTruss10 =
+          this.state.allTrussData.filter(weekRowTruss10);
 
         console.log('Truss 9 : ' + JSON.stringify(filteredweekRowTruss10));
 
@@ -3070,8 +3045,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
 
   changeCheckbox = () => {
     this.setState({
-      Har1SunsetDelightRow1Plant4Selected: !this.state
-        .Har1SunsetDelightRow1Plant4Selected,
+      Har1SunsetDelightRow1Plant4Selected:
+        !this.state.Har1SunsetDelightRow1Plant4Selected,
     });
 
     const vart = this.state.Har1SunsetDelightRow1Plant4Selected;
@@ -3093,15 +3068,15 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
     const vart = this.state.Har1SunsetDelightRow1Plant4Selected;
 
     if (vart == null || vart == false) {
-      const {leavesPerPlantHar1SunsetDelightRow1Plant4} = this.state;
-      const {fullySetTrussHar1SunsetDelightRow1Plant4} = this.state;
-      const {setTrussLengthHar1SunsetDelightRow1Plant4} = this.state;
-      const {weeklyGrowthHar1SunsetDelightRow1Plant4} = this.state;
-      const {floweringTrussHeightHar1SunsetDelightRow1Plant4} = this.state;
-      const {leafLengthHar1SunsetDelightRow1Plant4} = this.state;
-      const {leafWidthHar1SunsetDelightRow1Plant4} = this.state;
-      const {stmDiameterHar1SunsetDelightRow1Plant4} = this.state;
-      const {lastWeekStmDiameterHar1SunsetDelightRow1Plant4} = this.state;
+      const { leavesPerPlantHar1SunsetDelightRow1Plant4 } = this.state;
+      const { fullySetTrussHar1SunsetDelightRow1Plant4 } = this.state;
+      const { setTrussLengthHar1SunsetDelightRow1Plant4 } = this.state;
+      const { weeklyGrowthHar1SunsetDelightRow1Plant4 } = this.state;
+      const { floweringTrussHeightHar1SunsetDelightRow1Plant4 } = this.state;
+      const { leafLengthHar1SunsetDelightRow1Plant4 } = this.state;
+      const { leafWidthHar1SunsetDelightRow1Plant4 } = this.state;
+      const { stmDiameterHar1SunsetDelightRow1Plant4 } = this.state;
+      const { lastWeekStmDiameterHar1SunsetDelightRow1Plant4 } = this.state;
 
       let data = {
         plantRow: '123',
@@ -3112,13 +3087,13 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         fullySetTruss: this.state.fullySetTrussHar1SunsetDelightRow1Plant4,
         setTrussLength: this.state.setTrussLengthHar1SunsetDelightRow1Plant4,
         weeklyGrowth: this.state.weeklyGrowthHar1SunsetDelightRow1Plant4,
-        floweringTrussHeight: this.state
-          .floweringTrussHeightHar1SunsetDelightRow1Plant4,
+        floweringTrussHeight:
+          this.state.floweringTrussHeightHar1SunsetDelightRow1Plant4,
         leafLength: this.state.leafLengthHar1SunsetDelightRow1Plant4,
         leafWidth: this.state.leafWidthHar1SunsetDelightRow1Plant4,
         stmDiameter: this.state.stmDiameterHar1SunsetDelightRow1Plant4,
-        lastWeekStmDiameter: this.state
-          .lastWeekStmDiameterHar1SunsetDelightRow1Plant4,
+        lastWeekStmDiameter:
+          this.state.lastWeekStmDiameterHar1SunsetDelightRow1Plant4,
       };
 
       if (+!isNaN(+leavesPerPlantHar1SunsetDelightRow1Plant4)) {
@@ -3132,7 +3107,7 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                       if (
                         +!isNaN(+lastWeekStmDiameterHar1SunsetDelightRow1Plant4)
                       ) {
-                        this.setState({checkboxStatus: 'CHECKED'});
+                        this.setState({ checkboxStatus: 'CHECKED' });
 
                         this.changeCheckbox();
 
@@ -3175,7 +3150,7 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         Alert.alert('Leaves per plant value looks incorrect');
       }
     } else {
-      this.setState({checkboxStatus: 'UNCHECKED'});
+      this.setState({ checkboxStatus: 'UNCHECKED' });
     }
   };
 
@@ -3649,7 +3624,9 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
   };
 
   onAccessoryPress() {
-    this.setState(({secureTextEntry}) => ({secureTextEntry: !secureTextEntry}));
+    this.setState(({ secureTextEntry }) => ({
+      secureTextEntry: !secureTextEntry,
+    }));
   }
 
   onSubmitFullysetTruss() {
@@ -3692,7 +3669,7 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
   //INITIALIZE ONFOCUS
 
   onFocus() {
-    let {errors = {}} = this.state;
+    let { errors = {} } = this.state;
 
     for (let name in errors) {
       let ref = this[name];
@@ -3702,7 +3679,7 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
       }
     }
 
-    this.setState({errors});
+    this.setState({ errors });
   }
   //
 
@@ -3737,7 +3714,7 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
       }
     });
 
-    this.setState({errors});
+    this.setState({ errors });
   }
 
   updateRef(name, ref) {
@@ -3749,19 +3726,21 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {Platform.OS === 'ios' ? <View style={{marginTop: 15}}></View> : null}
+        {Platform.OS === 'ios' ? <View style={{ marginTop: 15 }}></View> : null}
 
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
             marginLeft: 20,
-          }}>
+          }}
+        >
           <View style={styles.headerImage1}>
             <TouchableOpacity
               onPress={() =>
                 this.props.navigation.push('Har1SunsetDelightPlantsRow1')
-              }>
+              }
+            >
               <Image source={require('../assets/back.png')} />
             </TouchableOpacity>
           </View>
@@ -3770,8 +3749,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
             <Text style={styles.text}>HAR 1 - Sunset Delight</Text>
           </View>
 
-          <View style={{height: 20, width: 20}}>
-            <Text style={{alignSelf: 'center'}}></Text>
+          <View style={{ height: 20, width: 20 }}>
+            <Text style={{ alignSelf: 'center' }}></Text>
           </View>
         </View>
 
@@ -3783,16 +3762,19 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
         <View style={styles.marginMicroSmallDimensionTop}></View>
 
         <KeyboardAvoidingView
-          style={{flex: 1}}
+          style={{ flex: 1 }}
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-          enabled>
+          enabled
+        >
           <ScrollView
             keyboardShouldPersistTaps="handled"
-            scrollEventThrottle={16}>
+            scrollEventThrottle={16}
+          >
             <View
               pointerEvents={
                 this.state.Har1SunsetDelightRow1Plant4Selected ? 'none' : 'auto'
-              }>
+              }
+            >
               <View style={styles.formContainer}>
                 <View style={styles.marginSmallDimensionTop}></View>
 
@@ -5803,7 +5785,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                       this.state.fruitLoadHar1SunsetDelightRow1Plant4 >= 40
                         ? styles.borderErrorColor
                         : null,
-                    ]}>
+                    ]}
+                  >
                     <View
                       style={{
                         marginTop: 1,
@@ -5832,7 +5815,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                         45
                         ? styles.borderErrorColor
                         : null,
-                    ]}>
+                    ]}
+                  >
                     <View style={styles.row}>
                       <Text style={styles.text4}>Flowering Truss</Text>
                       <Text style={styles.text5}>
@@ -5855,7 +5839,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                         .settingTrussNumberHar1SunsetDelightRow1Plant4 >= 45
                         ? styles.borderErrorColor
                         : null,
-                    ]}>
+                    ]}
+                  >
                     <View style={styles.row}>
                       <Text style={styles.text4}>Setting Truss</Text>
                       <Text style={styles.text5}>
@@ -5880,7 +5865,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                         45
                         ? styles.borderErrorColor
                         : null,
-                    ]}>
+                    ]}
+                  >
                     <View style={styles.row}>
                       <Text style={styles.text4}>Harvest Truss</Text>
                       <Text style={styles.text5}>
@@ -5979,7 +5965,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                       plant: 4,
                       type: 'HAR 1 - Sunset Delight',
                     })
-                  }>
+                  }
+                >
                   <Text style={styles.textDataChecker}>Data Checker</Text>
                 </TouchableOpacity>
                 <View style={styles.marginXSmallDimensionTop}></View>
@@ -5991,8 +5978,8 @@ export default class Har1SunsetDelightRow1Plant4 extends Component {
                   checkedColor="green"
                   title="HAR 1 Sunset Delight Plant 4 completed"
                   checked={this.state.Har1SunsetDelightRow1Plant4Selected}
-                  textStyle={{fontSize: 16}}
-                  containerStyle={{backgroundColor: 'transparent'}}
+                  textStyle={{ fontSize: 16 }}
+                  containerStyle={{ backgroundColor: 'transparent' }}
                   onPress={() => this.checkStatus()}
                 />
               </View>

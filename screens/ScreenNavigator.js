@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
@@ -8,7 +8,7 @@ import {
   ImageBackground,
   useEffect,
 } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 var houseSelected;
 
@@ -45,7 +45,8 @@ export default class ScreenNavigator extends React.Component {
       <View style={styles.container}>
         <ImageBackground
           source={require('../assets/custom_background_Img.png')}
-          style={styles.backgroundImage}></ImageBackground>
+          style={styles.backgroundImage}
+        ></ImageBackground>
       </View>
     );
   }

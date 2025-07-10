@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,11 +9,11 @@ import {
   Dimensions,
   Platform,
 } from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler';
 import moment from 'moment';
-import {LogBox} from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
-import {DataTable} from 'react-native-paper';
+import { LogBox } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { DataTable } from 'react-native-paper';
 
 var screenWidth = Dimensions.get('window').width / 1.6;
 var nameSelected, rowSelected, plantNumberSelected, plantTypeSelected;
@@ -352,11 +352,10 @@ export default class Har1DataChecker extends Component {
             d.plantRow === rowSelected &&
             d.plantNumber === plantNumberSelected;
 
-          const filteredweekRowPlant = allPlant.plant_details.filter(
-            weekRowPlant,
-          );
+          const filteredweekRowPlant =
+            allPlant.plant_details.filter(weekRowPlant);
 
-          this.setState({allPlantDataWeek3: filteredweekRowPlant});
+          this.setState({ allPlantDataWeek3: filteredweekRowPlant });
 
           this.filterPlantDataWeek3();
         })
@@ -377,11 +376,10 @@ export default class Har1DataChecker extends Component {
             d.plantRow === rowSelected &&
             d.plantNumber === plantNumberSelected;
 
-          const filteredweekRowTruss = allTruss.truss_details.filter(
-            weekRowTruss,
-          );
+          const filteredweekRowTruss =
+            allTruss.truss_details.filter(weekRowTruss);
 
-          this.setState({allTrussDataWeek3: filteredweekRowTruss});
+          this.setState({ allTrussDataWeek3: filteredweekRowTruss });
 
           this.filterTrussDataWeek3();
         })
@@ -404,11 +402,10 @@ export default class Har1DataChecker extends Component {
             d.plantRow === rowSelected &&
             d.plantNumber === plantNumberSelected;
 
-          const filteredweekRowPlant = allPlant.plant_details.filter(
-            weekRowPlant,
-          );
+          const filteredweekRowPlant =
+            allPlant.plant_details.filter(weekRowPlant);
 
-          this.setState({allPlantDataWeek2: filteredweekRowPlant});
+          this.setState({ allPlantDataWeek2: filteredweekRowPlant });
 
           this.filterPlantDataWeek2();
         })
@@ -429,11 +426,10 @@ export default class Har1DataChecker extends Component {
             d.plantRow === rowSelected &&
             d.plantNumber === plantNumberSelected;
 
-          const filteredweekRowTruss = allTruss.truss_details.filter(
-            weekRowTruss,
-          );
+          const filteredweekRowTruss =
+            allTruss.truss_details.filter(weekRowTruss);
 
-          this.setState({allTrussDataWeek2: filteredweekRowTruss});
+          this.setState({ allTrussDataWeek2: filteredweekRowTruss });
 
           this.filterTrussDataWeek2();
         })
@@ -460,11 +456,10 @@ export default class Har1DataChecker extends Component {
             d.plantRow === rowSelected &&
             d.plantNumber === plantNumberSelected;
 
-          const filteredweekRowPlant = allPlant.plant_details.filter(
-            weekRowPlant,
-          );
+          const filteredweekRowPlant =
+            allPlant.plant_details.filter(weekRowPlant);
 
-          this.setState({allPlantDataWeek1: filteredweekRowPlant});
+          this.setState({ allPlantDataWeek1: filteredweekRowPlant });
 
           this.filterPlantDataWeek1();
         })
@@ -485,11 +480,10 @@ export default class Har1DataChecker extends Component {
             d.plantRow === rowSelected &&
             d.plantNumber === plantNumberSelected;
 
-          const filteredweekRowTruss = allTruss.truss_details.filter(
-            weekRowTruss,
-          );
+          const filteredweekRowTruss =
+            allTruss.truss_details.filter(weekRowTruss);
 
-          this.setState({allTrussDataWeek1: filteredweekRowTruss});
+          this.setState({ allTrussDataWeek1: filteredweekRowTruss });
 
           this.filterTrussDataWeek1();
         })
@@ -1300,17 +1294,19 @@ export default class Har1DataChecker extends Component {
   render() {
     return (
       <View style={styles.containerMain}>
-        {Platform.OS === 'ios' ? <View style={{marginTop: 15}}></View> : null}
+        {Platform.OS === 'ios' ? <View style={{ marginTop: 15 }}></View> : null}
 
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
             marginLeft: 20,
-          }}>
+          }}
+        >
           <View style={styles.headerImage1}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate(nameSelected)}>
+              onPress={() => this.props.navigation.navigate(nameSelected)}
+            >
               <Image source={require('../assets/back.png')} />
             </TouchableOpacity>
           </View>
@@ -1319,8 +1315,8 @@ export default class Har1DataChecker extends Component {
             <Text style={styles.text}>{plantTypeSelected}</Text>
           </View>
 
-          <View style={{height: 20, width: 20}}>
-            <Text style={{alignSelf: 'center'}}></Text>
+          <View style={{ height: 20, width: 20 }}>
+            <Text style={{ alignSelf: 'center' }}></Text>
           </View>
         </View>
 
@@ -1328,7 +1324,7 @@ export default class Har1DataChecker extends Component {
           Plant {this.state.plantNumber} - Row No. {this.state.rowNumber}
         </Text>
 
-        <View style={{marginTop: 18}}></View>
+        <View style={{ marginTop: 18 }}></View>
 
         <ScrollView keyboardShouldPersistTaps="handled">
           <View style={styles.container}>

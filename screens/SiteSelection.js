@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
@@ -11,8 +11,8 @@ import {
   FlatList,
   ActivityIndicator,
 } from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
-import AsyncStorage from '@react-native-community/async-storage';
+import { ScrollView } from 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 var houseSelected;
 
@@ -44,7 +44,7 @@ export default class SiteSelection extends React.Component {
       AsyncStorage.getItem('house')
         .then(text1Value => {
           houseSelected = JSON.parse(text1Value);
-          this.setState({selected: text1Value});
+          this.setState({ selected: text1Value });
 
           if (houseSelected === 'HAR') {
             //CHANGE THE SCREEN NAME
@@ -72,7 +72,7 @@ export default class SiteSelection extends React.Component {
         {
           text: 'Yes',
           onPress: () =>
-            this.props.navigation.navigate('ScreenNavigator', {site1: 'HAR'}),
+            this.props.navigation.navigate('ScreenNavigator', { site1: 'HAR' }),
         },
         {
           text: 'No',
@@ -94,7 +94,7 @@ export default class SiteSelection extends React.Component {
         {
           text: 'Yes',
           onPress: () =>
-            this.props.navigation.navigate('ScreenNavigator', {site1: 'GER'}),
+            this.props.navigation.navigate('ScreenNavigator', { site1: 'GER' }),
         },
         {
           text: 'No',
@@ -116,7 +116,7 @@ export default class SiteSelection extends React.Component {
         {
           text: 'Yes',
           onPress: () =>
-            this.props.navigation.navigate('ScreenNavigator', {site1: 'REP'}),
+            this.props.navigation.navigate('ScreenNavigator', { site1: 'REP' }),
         },
         {
           text: 'No',
@@ -138,7 +138,7 @@ export default class SiteSelection extends React.Component {
         {
           text: 'Yes',
           onPress: () =>
-            this.props.navigation.navigate('ScreenNavigator', {site1: 'OHA'}),
+            this.props.navigation.navigate('ScreenNavigator', { site1: 'OHA' }),
         },
         {
           text: 'No',
@@ -164,7 +164,8 @@ export default class SiteSelection extends React.Component {
         <View style={styles.containerButtons}>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={this.harAlertButton}>
+            onPress={this.harAlertButton}
+          >
             <Text style={styles.buttonText}>HAR</Text>
           </TouchableOpacity>
 
@@ -172,7 +173,8 @@ export default class SiteSelection extends React.Component {
 
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={this.gerAlertButton}>
+            onPress={this.gerAlertButton}
+          >
             <Text style={styles.buttonText}>GER</Text>
           </TouchableOpacity>
 
@@ -180,7 +182,8 @@ export default class SiteSelection extends React.Component {
 
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={this.ohaAlertButton}>
+            onPress={this.ohaAlertButton}
+          >
             <Text style={styles.buttonText}>OHA</Text>
           </TouchableOpacity>
 
@@ -188,7 +191,8 @@ export default class SiteSelection extends React.Component {
 
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={this.repAlertButton}>
+            onPress={this.repAlertButton}
+          >
             <Text style={styles.buttonText}>REP</Text>
           </TouchableOpacity>
         </View>
