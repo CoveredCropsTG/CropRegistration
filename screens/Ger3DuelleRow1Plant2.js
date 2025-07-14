@@ -234,7 +234,7 @@ export default class Ger3DuelleRow1Plant2 extends Component {
           const weekRowPlant = d =>
             d.plantName === 'GER 3 - Duelle' &&
             d.plantNumber === 2 &&
-            d.plantRow === '116' &&
+            d.plantRow === '36' &&
             d.plantWeek === filteredPlantWeek;
 
           const filteredweekRowPlant =
@@ -258,7 +258,7 @@ export default class Ger3DuelleRow1Plant2 extends Component {
           const weekRowTruss = d =>
             d.plantName === 'GER 3 - Duelle' &&
             d.plantNumber === 2 &&
-            d.plantRow === '116' &&
+            d.plantRow === '36' &&
             d.plantWeek === filteredTrussWeek;
 
           const filteredweekRowTruss =
@@ -2942,7 +2942,7 @@ export default class Ger3DuelleRow1Plant2 extends Component {
       const { lastWeekStmDiameterGer3DuelleRow1Plant2 } = this.state;
 
       let data = {
-        plantRow: '116',
+        plantRow: '36',
         plantName: 'GER 3 - Duelle',
         plantWeek: this.state.weekNumber,
         plantNumber: 2,
@@ -3025,7 +3025,7 @@ export default class Ger3DuelleRow1Plant2 extends Component {
         setFruits: this.state.setFruitsGer3DuelleRow1Plant2,
         setFlowers: this.state.setFlowersGer3DuelleRow1Plant2,
         pruningNumber: this.state.pruningNumberGer3DuelleRow1Plant2,
-        plantRow: '116',
+        plantRow: '36',
         plantName: 'GER 3 - Duelle',
         plantWeek: this.state.weekNumber,
         plantNumber: 2,
@@ -3070,7 +3070,7 @@ export default class Ger3DuelleRow1Plant2 extends Component {
         setFruits: this.state.setFruits1Ger3DuelleRow1Plant2,
         setFlowers: this.state.setFlowers1Ger3DuelleRow1Plant2,
         pruningNumber: this.state.pruningNumber1Ger3DuelleRow1Plant2,
-        plantRow: '116',
+        plantRow: '36',
         plantName: 'GER 3 - Duelle',
         plantWeek: this.state.weekNumber,
         plantNumber: 2,
@@ -3115,7 +3115,7 @@ export default class Ger3DuelleRow1Plant2 extends Component {
         setFruits: this.state.setFruits2Ger3DuelleRow1Plant2,
         setFlowers: this.state.setFlowers2Ger3DuelleRow1Plant2,
         pruningNumber: this.state.pruningNumber2Ger3DuelleRow1Plant2,
-        plantRow: '116',
+        plantRow: '36',
         plantName: 'GER 3 - Duelle',
         plantWeek: this.state.weekNumber,
         plantNumber: 2,
@@ -3161,7 +3161,7 @@ export default class Ger3DuelleRow1Plant2 extends Component {
         setFruits: this.state.setFruits3Ger3DuelleRow1Plant2,
         setFlowers: this.state.setFlowers3Ger3DuelleRow1Plant2,
         pruningNumber: this.state.pruningNumber3Ger3DuelleRow1Plant2,
-        plantRow: '116',
+        plantRow: '36',
         plantName: 'GER 3 - Duelle',
         plantWeek: this.state.weekNumber,
         plantNumber: 2,
@@ -3206,7 +3206,7 @@ export default class Ger3DuelleRow1Plant2 extends Component {
         setFruits: this.state.setFruits4Ger3DuelleRow1Plant2,
         setFlowers: this.state.setFlowers4Ger3DuelleRow1Plant2,
         pruningNumber: this.state.pruningNumber4Ger3DuelleRow1Plant2,
-        plantRow: '116',
+        plantRow: '36',
         plantName: 'GER 3 - Duelle',
         plantWeek: this.state.weekNumber,
         plantNumber: 2,
@@ -3249,7 +3249,7 @@ export default class Ger3DuelleRow1Plant2 extends Component {
         setFruits: this.state.setFruits5Ger3DuelleRow1Plant2,
         setFlowers: this.state.setFlowers5Ger3DuelleRow1Plant2,
         pruningNumber: this.state.pruningNumber5Ger3DuelleRow1Plant2,
-        plantRow: '116',
+        plantRow: '36',
         plantName: 'GER 3 - Duelle',
         plantWeek: this.state.weekNumber,
         plantNumber: 2,
@@ -3298,7 +3298,7 @@ export default class Ger3DuelleRow1Plant2 extends Component {
         setFruits: this.state.setFruits6Ger3DuelleRow1Plant2,
         setFlowers: this.state.setFlowers6Ger3DuelleRow1Plant2,
         pruningNumber: this.state.pruningNumber6Ger3DuelleRow1Plant2,
-        plantRow: '116',
+        plantRow: '36',
         plantName: 'GER 3 - Duelle',
         plantWeek: this.state.weekNumber,
         plantNumber: 2,
@@ -3343,7 +3343,7 @@ export default class Ger3DuelleRow1Plant2 extends Component {
         setFruits: this.state.setFruits7Ger3DuelleRow1Plant2,
         setFlowers: this.state.setFlowers7Ger3DuelleRow1Plant2,
         pruningNumber: this.state.pruningNumber7Ger3DuelleRow1Plant2,
-        plantRow: '116',
+        plantRow: '36',
         plantName: 'GER 3 - Duelle',
         plantWeek: this.state.weekNumber,
         plantNumber: 2,
@@ -3388,7 +3388,7 @@ export default class Ger3DuelleRow1Plant2 extends Component {
         setFruits: this.state.setFruits8Ger3DuelleRow1Plant2,
         setFlowers: this.state.setFlowers8Ger3DuelleRow1Plant2,
         pruningNumber: this.state.pruningNumber8Ger3DuelleRow1Plant2,
-        plantRow: '116',
+        plantRow: '36',
         plantName: 'GER 3 - Duelle',
         plantWeek: this.state.weekNumber,
         plantNumber: 2,
@@ -3433,7 +3433,7 @@ export default class Ger3DuelleRow1Plant2 extends Component {
         setFruits: this.state.setFruits9Ger3DuelleRow1Plant2,
         setFlowers: this.state.setFlowers9Ger3DuelleRow1Plant2,
         pruningNumber: this.state.pruningNumber9Ger3DuelleRow1Plant2,
-        plantRow: '116',
+        plantRow: '36',
         plantName: 'GER 3 - Duelle',
         plantWeek: this.state.weekNumber,
         plantNumber: 2,
@@ -3587,7 +3587,7 @@ export default class Ger3DuelleRow1Plant2 extends Component {
         </View>
 
         <Text style={styles.text2}>
-          <Text style={styles.textPlants}>Plant 2</Text>/ Row No. 116/ Week No.{' '}
+          <Text style={styles.textPlants}>Plant 2</Text>/ Row No. 36/ Week No.{' '}
           {this.state.weekNumber}
         </Text>
 
@@ -5772,7 +5772,7 @@ export default class Ger3DuelleRow1Plant2 extends Component {
                   onPress={() =>
                     this.props.navigation.navigate('Ger3DataChecker', {
                       name: 'Ger3DuelleRow1Plant2',
-                      row: '116',
+                      row: '36',
                       plant: 2,
                       type: 'GER 3 - Duelle',
                     })

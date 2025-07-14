@@ -61,7 +61,7 @@ export default class Ger3IcariaRow extends Component {
                 this.props.navigation.navigate('Ger3IcariaPlantsRow1')
               }
             >
-              <Text style={styles.buttonText}>Row 126</Text>
+              <Text style={styles.buttonText}>Row 113</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>

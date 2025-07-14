@@ -22,7 +22,7 @@ var plant3Selected;
 var plant4Selected;
 var plant5Selected;
 
-export default class Ger3DunistarPlantsRow2 extends Component {
+export default class Ger3DuelleDoubleDuoPlantsRow2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,11 +54,11 @@ export default class Ger3DunistarPlantsRow2 extends Component {
   componentWillUnmount() {
     //this.focusListener();
 
-    EventRegister.removeEventListener(this.ger3DunistarRow2EventPlant1);
-    EventRegister.removeEventListener(this.ger3DunistarRow2EventPlant2);
-    EventRegister.removeEventListener(this.ger3DunistarRow2EventPlant3);
-    EventRegister.removeEventListener(this.ger3DunistarRow2EventPlant4);
-    EventRegister.removeEventListener(this.ger3DunistarRow2EventPlant5);
+    EventRegister.removeEventListener(this.ger3DuelleDoubleDuoRow2EventPlant1);
+    EventRegister.removeEventListener(this.ger3DuelleDoubleDuoRow2EventPlant2);
+    EventRegister.removeEventListener(this.ger3DuelleDoubleDuoRow2EventPlant3);
+    EventRegister.removeEventListener(this.ger3DuelleDoubleDuoRow2EventPlant4);
+    EventRegister.removeEventListener(this.ger3DuelleDoubleDuoRow2EventPlant5);
   }
 
   componentDidUpdate() {
@@ -73,8 +73,8 @@ export default class Ger3DunistarPlantsRow2 extends Component {
 
   UNSAFE_componentWillMount() {
     //PLANT 1
-    this.ger3DunistarRow2EventPlant1 = EventRegister.addEventListener(
-      'ger3DunistarRow2EventPlant1',
+    this.ger3DuelleDoubleDuoRow2EventPlant1 = EventRegister.addEventListener(
+      'ger3DuelleDoubleDuoRow2EventPlant1',
       data1 => {
         plant1Selected = data1;
 
@@ -87,8 +87,8 @@ export default class Ger3DunistarPlantsRow2 extends Component {
     );
 
     //PLANT 2
-    this.ger3DunistarRow2EventPlant2 = EventRegister.addEventListener(
-      'ger3DunistarRow2EventPlant2',
+    this.ger3DuelleDoubleDuoRow2EventPlant2 = EventRegister.addEventListener(
+      'ger3DuelleDoubleDuoRow2EventPlant2',
       data2 => {
         plant2Selected = data2;
 
@@ -101,8 +101,8 @@ export default class Ger3DunistarPlantsRow2 extends Component {
     );
 
     //PLANT 3
-    this.ger3DunistarRow2EventPlant3 = EventRegister.addEventListener(
-      'ger3DunistarRow2EventPlant3',
+    this.ger3DuelleDoubleDuoRow2EventPlant3 = EventRegister.addEventListener(
+      'ger3DuelleDoubleDuoRow2EventPlant3',
       data3 => {
         plant3Selected = data3;
 
@@ -115,8 +115,8 @@ export default class Ger3DunistarPlantsRow2 extends Component {
     );
 
     //PLANT 4
-    this.ger3DunistarRow2EventPlant4 = EventRegister.addEventListener(
-      'ger3DunistarRow2EventPlant4',
+    this.ger3DuelleDoubleDuoRow2EventPlant4 = EventRegister.addEventListener(
+      'ger3DuelleDoubleDuoRow2EventPlant4',
       data4 => {
         plant4Selected = data4;
 
@@ -129,8 +129,8 @@ export default class Ger3DunistarPlantsRow2 extends Component {
     );
 
     //PLANT 5
-    this.ger3DunistarRow2EventPlant5 = EventRegister.addEventListener(
-      'ger3DunistarRow2EventPlant5',
+    this.ger3DuelleDoubleDuoRow2EventPlant5 = EventRegister.addEventListener(
+      'ger3DuelleDoubleDuoRow2EventPlant5',
       data5 => {
         plant5Selected = data5;
 
@@ -149,7 +149,7 @@ export default class Ger3DunistarPlantsRow2 extends Component {
         <TouchableOpacity
           style={styles.buttonContainer}
           onPress={() =>
-            this.props.navigation.navigate('Ger3DunistarRow2Plant1')
+            this.props.navigation.navigate('Ger3DuelleDoubleDuoRow2Plant1')
           }
         >
           <Text style={styles.buttonText}>
@@ -162,7 +162,7 @@ export default class Ger3DunistarPlantsRow2 extends Component {
         <TouchableOpacity
           style={styles.buttonContainerImage}
           onPress={() =>
-            this.props.navigation.navigate('Ger3DunistarRow2Plant1')
+            this.props.navigation.navigate('Ger3DuelleDoubleDuoRow2Plant1')
           }
         >
           <Text style={styles.buttonText}>
@@ -183,7 +183,7 @@ export default class Ger3DunistarPlantsRow2 extends Component {
         <TouchableOpacity
           style={styles.buttonContainer}
           onPress={() =>
-            this.props.navigation.navigate('Ger3DunistarRow2Plant2')
+            this.props.navigation.navigate('Ger3DuelleDoubleDuoRow2Plant2')
           }
         >
           <Text style={styles.buttonText}>
@@ -196,7 +196,7 @@ export default class Ger3DunistarPlantsRow2 extends Component {
         <TouchableOpacity
           style={styles.buttonContainerImage}
           onPress={() =>
-            this.props.navigation.navigate('Ger3DunistarRow2Plant2')
+            this.props.navigation.navigate('Ger3DuelleDoubleDuoRow2Plant2')
           }
         >
           <Text style={styles.buttonText}>
@@ -217,7 +217,7 @@ export default class Ger3DunistarPlantsRow2 extends Component {
         <TouchableOpacity
           style={styles.buttonContainer}
           onPress={() =>
-            this.props.navigation.navigate('Ger3DunistarRow2Plant3')
+            this.props.navigation.navigate('Ger3DuelleDoubleDuoRow2Plant3')
           }
         >
           <Text style={styles.buttonText}>
@@ -230,7 +230,7 @@ export default class Ger3DunistarPlantsRow2 extends Component {
         <TouchableOpacity
           style={styles.buttonContainerImage}
           onPress={() =>
-            this.props.navigation.navigate('Ger3DunistarRow2Plant3')
+            this.props.navigation.navigate('Ger3DuelleDoubleDuoRow2Plant3')
           }
         >
           <Text style={styles.buttonText}>
@@ -251,7 +251,7 @@ export default class Ger3DunistarPlantsRow2 extends Component {
         <TouchableOpacity
           style={styles.buttonContainer}
           onPress={() =>
-            this.props.navigation.navigate('Ger3DunistarRow2Plant4')
+            this.props.navigation.navigate('Ger3DuelleDoubleDuoRow2Plant4')
           }
         >
           <Text style={styles.buttonText}>
@@ -264,7 +264,7 @@ export default class Ger3DunistarPlantsRow2 extends Component {
         <TouchableOpacity
           style={styles.buttonContainerImage}
           onPress={() =>
-            this.props.navigation.navigate('Ger3DunistarRow2Plant4')
+            this.props.navigation.navigate('Ger3DuelleDoubleDuoRow2Plant4')
           }
         >
           <Text style={styles.buttonText}>
@@ -285,7 +285,7 @@ export default class Ger3DunistarPlantsRow2 extends Component {
         <TouchableOpacity
           style={styles.buttonContainer}
           onPress={() =>
-            this.props.navigation.navigate('Ger3DunistarRow2Plant5')
+            this.props.navigation.navigate('Ger3DuelleDoubleDuoRow2Plant5')
           }
         >
           <Text style={styles.buttonText}>
@@ -298,7 +298,7 @@ export default class Ger3DunistarPlantsRow2 extends Component {
         <TouchableOpacity
           style={styles.buttonContainerImage}
           onPress={() =>
-            this.props.navigation.navigate('Ger3DunistarRow2Plant5')
+            this.props.navigation.navigate('Ger3DuelleDoubleDuoRow2Plant5')
           }
         >
           <Text style={styles.buttonText}>
@@ -327,14 +327,16 @@ export default class Ger3DunistarPlantsRow2 extends Component {
         >
           <View style={styles.headerImage1}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Ger3DunistarRow')}
+              onPress={() =>
+                this.props.navigation.navigate('Ger3DuelleDoubleDuoRow')
+              }
             >
               <Image source={require('../assets/back.png')} />
             </TouchableOpacity>
           </View>
 
           <View style={styles.headerImage2}>
-            <Text style={styles.text}>GER 3 - Dunistar / Row 76</Text>
+            <Text style={styles.text}>GER 3 - DuelleDoubleDuo / Row 103</Text>
           </View>
 
           <View style={{ height: 20, width: 20 }}>
